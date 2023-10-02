@@ -1,8 +1,7 @@
-<script>
-  import Workshops from '../components/workshops.svelte';
-</script>
+<!-- <script>
+	export let data;
+	console.log(data);
+</script> -->
 
-<Workshops />
-
-
-
+<a href="/workshops">workshops</a>
+<a href="" />
