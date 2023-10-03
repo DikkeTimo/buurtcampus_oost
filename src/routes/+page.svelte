@@ -1,7 +1,8 @@
-<!-- <script>
+<script>
 	export let data;
-	console.log(data);
-</script> -->
+
+	import Workshops from './workshops/+page.svelte';
+</script>
 
 <a href="/workshops">workshops</a>
 <a href="/all_stekjes" />
