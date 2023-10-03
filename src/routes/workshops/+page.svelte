@@ -23,20 +23,26 @@
 </div>
 
 <div class="container_workshop_cards">
-	<div class="top_card" />
-	<div class="flex_container">
-		<div class="left_side">
-			<div class="small_card" />
-			<div class="long_card" />
+	{#each data.workshops as workshop}
+		<div class="top_card" />
+		<div class="flex_container">
+			<div class="left_side">
+				<div class="small_card">
+				</div>
+				<div class="long_card" />
+			</div>
+			<div class="right_side">
+				<div class="long_card" />
+				<div class="small_card" />
+			</div>
 		</div>
-		<div class="right_side">
-			<div class="long_card" />
-			<div class="small_card" />
-		</div>
-	</div>
+	{/each}
 </div>
 
 <style>
+	h1 {
+		margin: 1rem;
+	}
 	.filter_data {
 		overflow-x: auto;
 		width: 100vw;
@@ -87,6 +93,7 @@
 	.flex_container {
 		display: flex;
 		justify-content: space-between;
+		gap: 1rem;
 	}
 
 	.left_side,
