@@ -5,4 +5,4 @@
 </script>
 
 <a href="/workshops">workshops</a>
-<a href="/all_stekjes" />
+<a href="/all_stekjes"></a>
