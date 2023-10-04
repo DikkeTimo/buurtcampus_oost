@@ -36,6 +36,7 @@
 </script>
 
 
+
 <section class="carousel">
     <div class="slides">
         <div class="slides-item slide-1" id="slide-1">1</div>
@@ -101,5 +102,8 @@
 
 
 </style>
+
+
+<a href="/workshops">workshops</a>
 
 
