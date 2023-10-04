@@ -12,10 +12,10 @@
     --sec-title-color:#6A6A6A;
     --sub-heading-color:#333467;
     /* De sizing heb ik van figma dev */
-    --title-size: 6.25rem;
-    --sub-heading-size:1.875rem;
-    --sec-title-size: 2.5rem;
-    --text-size:1.5rem;
+    --title-size: 100px;
+    --sub-heading-size: 30px;
+    --sec-title-size: 40px;
+    --text-size: 24px;
     /* fonts */
 }
 </style>
