@@ -11,11 +11,11 @@
     --title-color:#4E7141 ;
     --sec-title-color:#6A6A6A;
     --sub-heading-color:#333467;
-    /* De sizing heb ik van figma dev */
-    --title-size: 100px;
-    --sub-heading-size: 30px;
-    --sec-title-size: 40px;
-    --text-size: 24px;
+    /* sizes */
+    --title-size: 32px;
+    --sub-heading-size: 25px;
+    --sec-title-size: 20px;
+    --text-size: 17px;
     /* fonts */
 }
 </style>
