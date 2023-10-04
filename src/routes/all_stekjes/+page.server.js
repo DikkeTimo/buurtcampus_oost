@@ -8,7 +8,12 @@ export async function load() {
 				aanmelddatum
 				beschrijving
 				fotos {
-					fotosStekje
+					fotosStekje {
+						id
+						fotos {
+							url
+						}
+					}
 				}
 				naam
 				slug
