@@ -19,8 +19,11 @@
 
 <h1>Workshops</h1>
 
-<label for="start">Maand:</label>
-<input type="month" id="month" value="" />
+
+<div class="input">
+	<label for="start">Selecteer maand:</label>
+	<input type="month" id="month" value="" />
+</div>
 
 <div class="container_workshop_cards">
 	{#each data.workshops as workshop}
@@ -91,6 +94,7 @@
 					>
 					{workshop.kosten}
 				</p>
+				<p>{workshop.datum}</p>
 			</div>
 		</div>
 	{/each}
@@ -105,8 +109,17 @@
 		margin: var(--margin);
 	}
 
-	label {
+	.input {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 		margin: var(--margin);
+	}
+
+	input {
+		padding: var(--padding);
+		border: 1px grey solid;
+		border-radius: 5px;
 	}
 	/* ----- */
 
