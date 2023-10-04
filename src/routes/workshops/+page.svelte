@@ -22,18 +22,18 @@
 	</div>
 </div>
 
+<!-- <div class="grid">
+	{#each data.workshops as workshop}
+	<div class="item" style="block-size: 1em;" />
+	{/each}
+</div> -->
+
 <div class="container_workshop_cards">
 	{#each data.workshops as workshop}
-		<div class="top_card" />
-		<div class="flex_container">
-			<div class="left_side">
-				<div class="small_card">
-				</div>
-				<div class="long_card" />
-			</div>
-			<div class="right_side">
-				<div class="long_card" />
-				<div class="small_card" />
+		<div class="card">
+			<img src={workshop.foto[0].url} alt="foto van een stekje" width="100" />
+			<div class="info_workshop">
+				<h3>{workshop.naam}</h3>
 			</div>
 		</div>
 	{/each}
@@ -78,17 +78,34 @@
 	/* ----- */
 
 	.container_workshop_cards {
-		padding: 1rem;
+		padding: 0.5rem;
 	}
 
-	.top_card {
-		background-image: url(stekjes.jpg);
-		background-size: cover;
-		border-radius: 16px;
+	.card {
+		display: flex;
 		width: 100%;
-		height: 27vh;
+		height: 20vh;
 		margin-bottom: 1rem;
+		-webkit-box-shadow: 0px 1px 5px 0px rgba(66, 68, 90, 1);
+		-moz-box-shadow: 0px 1px 5px 0px rgba(66, 68, 90, 1);
+		box-shadow: 0px 1px 5px 0px rgba(66, 68, 90, 1);
 	}
+
+	 img {
+		object-fit: cover;
+		height: 100%;
+	}
+
+	.info_workshop {
+		margin: 0.5rem;
+		width: 100%;
+	}
+
+	.info_workshop h3 {
+		color: var(--color-primair);
+	}
+
+	/*
 
 	.flex_container {
 		display: flex;
@@ -123,5 +140,5 @@
 		width: 100%;
 		height: 40vh;
 		margin-bottom: 1rem;
-	}
+	} */
 </style>
