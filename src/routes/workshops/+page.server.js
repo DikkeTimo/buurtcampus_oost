@@ -12,7 +12,9 @@ export async function load() {
 				foto {
 					id
 					url
+					width
 				}
+				datum
 			}
 		}
 	`;
