@@ -9,10 +9,11 @@
 </section>
 
 <section class="wrapper">
-	<!-- hier komen de kaartjes  -->
+<!-- hier komen de kaartjes  -->
 	
 </section>
 
 <style>
+
 	/* styling van mijn pagina */
 </style>
