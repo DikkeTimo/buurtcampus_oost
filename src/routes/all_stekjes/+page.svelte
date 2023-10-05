@@ -8,13 +8,24 @@
 
 <section class="intro_text">
 	<!-- introduction text -->
-	<svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
-  <path d="M6.11499 4.19838L6.30245 22.9475C6.30494 23.1373 6.35916 23.3228 6.45925 23.4841C6.55936 23.6454 6.70155 23.7764 6.87054 23.8629C7.03952 23.9494 7.2289 23.9881 7.41828 23.975C7.60766 23.9619 7.78987 23.8973 7.94531 23.7884L21.3926 14.2784C21.9501 13.8843 21.9408 12.9489 21.3754 12.565L7.74072 3.32583C7.58345 3.21888 7.39988 3.15708 7.20995 3.14714C7.02002 3.13719 6.831 3.17949 6.66343 3.26943C6.49585 3.35937 6.35612 3.49351 6.25943 3.65729C6.16274 3.82106 6.11279 4.0082 6.11499 4.19838Z" fill="#FF7A00"/>
-</svg>
+	<svg width="23" height="25" viewBox="0 0 23 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.5 8.16988C23.8333 10.0944 23.8333 14.9056 20.5 16.8301L7.74999 24.1913C4.41666 26.1158 0.249999 23.7102 0.249999 19.8612L0.25 5.13877C0.25 1.28977 4.41667 -1.11584 7.75 0.808657L20.5 8.16988Z"
+                  fill="#F26F21"/>
+        </svg>
 <p>Heb jij een of meerdere plantenstekjes over en 
    zou je die graag willen ruilen voor een nieuwe 
    plantje? Bekijk hieronder ons aanbod.</p>
 
+</section>
+
+<section class="filter">
+<label>
+  <input type="checkbox" id="moeilijkheidsgraad" value="makkelijk"> Makkelijk
+</label>
+
+<label>
+  <input type="checkbox" id="moeilijkheidsgraad" value="moeilijk"> Moeilijk
+</label>
 </section>
 
 <section class="wrapper">
@@ -38,20 +49,28 @@
 	h1{
 		font-size: var( --title-size);
 		color: var(--title-color);
-		margin: 1rem;
+		margin: 2rem;
 	}
 
 	.intro_text{
 		display: flex;
 		flex-direction: row;
 		gap: 10px;
-		margin: 1rem;
+		margin: 2rem;
 		margin-bottom: 3rem;
 		width: 25rem;
+		color: var(--text-color);
 	}
 
 	.intro_text p{
 		font-size: var(--text-size);
+	}
+
+
+	.filter{
+		display: flex;
+		gap: 1rem;
+		margin: 2rem;
 	}
 
 	.wrapper{
@@ -59,9 +78,10 @@
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
-		gap: 2rem;
-		margin: 1rem;
+		gap: 1rem;
+		margin: 2rem;
 	}
+
 
 	article{
 		width: 195px;
@@ -92,4 +112,5 @@
 		background-color: var( --accent-color-sec);
 		border-radius: 6px;
 	}
+
 </style>
