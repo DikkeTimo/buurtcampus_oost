@@ -24,8 +24,7 @@
 	header {
 		display: flex;
 		justify-content: space-between;
-    align-items: center;
-		width: 100%;
+		align-items: center;
 		height: 10vh;
 		-webkit-box-shadow: 0px 1px 5px 0px rgba(66, 68, 90, 1);
 		-moz-box-shadow: 0px 1px 5px 0px rgba(66, 68, 90, 1);
@@ -33,44 +32,45 @@
 	}
 
 	.logo {
-    padding: 1rem;
+		padding: 1rem;
 		height: 100%;
 		width: 30%;
 	}
 
 	/* Hamburger menu */
 
+	nav {
+		padding: 1rem;
+	}
+
 	#menuToggle {
-		display: block;
 		position: relative;
+		display: block;
 		z-index: 1;
 		user-select: none;
-    padding: 1rem;
 	}
 
 	#menuToggle a {
-		color: white;
 		text-decoration: none;
 	}
 
 	#menuToggle input {
 		display: block;
 		position: absolute;
-		top: 7px;
-		left: 7px;
+		height: 40px;
+		width: 32px;
 		cursor: pointer;
-		opacity: 0; /* hide this */
-		z-index: 2; /* and place it over the hamburger */
-		-webkit-touch-callout: none;
+		opacity: 0;
+		z-index: 2;
 	}
 
 	#menuToggle span {
+		background: var(--color-primair);
 		display: block;
+		position: relative;
 		width: 33px;
 		height: 4px;
 		margin-bottom: 5px;
-		position: relative;
-		background: var(--color-primair);
 		border-radius: 3px;
 		z-index: 1;
 		transform-origin: 4px 0px;
@@ -102,30 +102,32 @@
 	}
 
 	#menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 		position: absolute;
-		width: 200px;
+		width: 100vw;
+		height: 400px;
+		top: 0;
+		right: 0;
+		margin: -100px -16px 0 0;
 		padding: 50px;
 		padding-top: 125px;
-		top: 0;
-
 		background: var(--color-primair);
 		list-style-type: none;
 		-webkit-font-smoothing: antialiased;
-		/* to stop flickering of text in safari */
-
 		transform-origin: 0% 0%;
-		transform: translate(100%);
-
+    transform: translate(-600%, 0);
 		transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
 	}
 
-	#menu li {
-		padding: 10px 0;
-		font-size: 22px;
-	}
+  #menu a {
+    color: white;
+    padding: 1rem;
+  }
 
 	#menuToggle input:checked ~ ul {
 		transform: none;
-		transform: translate(-75%);
+    transform: translate(0, 0);
 	}
 </style>
