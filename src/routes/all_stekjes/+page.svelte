@@ -50,6 +50,7 @@
 		font-size: var( --title-size);
 		color: var(--title-color);
 		margin: 2rem;
+		font-weight:bolder;
 	}
 
 	.intro_text{
@@ -84,15 +85,23 @@
 
 
 	article{
+		display: flex;
+		flex-direction: column;
 		width: 195px;
         height: 266px;
 		overflow: hidden;
 		border-radius: 7px;
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+		position: relative;
 	}
 
 	article img{
 		width: 100px;
+		position: absolute; 
+		height: 266px;
+		width: 195px;
+        top: 0; 
+        left: 0; 
 		
 	}
 
@@ -101,6 +110,8 @@
         height: 89px;
 		background-color: #0D350CDE;
 		color: whitesmoke;
+		top: 177px;
+		position: relative;
 	}
 
 	/* article h3{
