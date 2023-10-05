@@ -21,6 +21,7 @@
 </header>
 
 <style>
+
 	header {
 		display: flex;
 		justify-content: space-between;
@@ -102,32 +103,30 @@
 	}
 
 	#menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 		position: absolute;
-		width: 100vw;
-		height: 400px;
+		width: 60vw;
+		height: 60vh;
 		top: 0;
 		right: 0;
 		margin: -100px -16px 0 0;
-		padding: 50px;
 		padding-top: 125px;
 		background: var(--color-primair);
-		list-style-type: none;
-		-webkit-font-smoothing: antialiased;
-		transform-origin: 0% 0%;
-    transform: translate(-600%, 0);
-		transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+		list-style-type: none;  
+    display: none;
 	}
 
-  #menu a {
-    color: white;
-    padding: 1rem;
-  }
+	#menu a {
+		color: white;
+		padding: 1rem;
+	}
 
 	#menuToggle input:checked ~ ul {
-		transform: none;
-    transform: translate(0, 0);
+    display: block;
 	}
+
+  @media (min-width: 413px) {
+    #menuToggle {
+      display: none;
+    }
+  }
 </style>
