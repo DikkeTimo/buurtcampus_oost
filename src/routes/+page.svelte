@@ -38,6 +38,8 @@
 
 </script>
 
+<a href="workshops">Workshops</a>
+
 <!-- CAROUSEL -->
 <section class="carousel">
 
