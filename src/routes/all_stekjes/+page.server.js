@@ -15,6 +15,9 @@ export async function load() {
 				landvanherkomst
 				zonlicht
 				watergeven
+				categories {
+					naam
+				}
 			}
 		}
 	`;

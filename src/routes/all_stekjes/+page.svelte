@@ -1,7 +1,12 @@
 <script>
+	import Header from '$lib/components/header.svelte'
+	import { onMount } from 'svelte';
 	export let data;
 	console.log(data)
+	
 </script>
+
+<Header/>
 
 
 <h1>Alle stekjes</h1>
@@ -26,7 +31,7 @@
 </label>
 
 <label>
-  <input type="checkbox" id="moeilijkheidsgraad" value="moeilijk"> Moeilijk
+  <input type="checkbox" id="moeilijkheidsgraad" value="uitdagend"> Uitdagend
 </label>
 </section>
 
@@ -38,6 +43,7 @@
 	<img src="{stekje.fotos[0].url}" alt="foto van {stekje.naam}">
 	<div>
 	<h3>{stekje.naam}</h3>
+	<span>{stekje.categories[0].naam}</span>
 	</div>
  </article>
 {/each}
