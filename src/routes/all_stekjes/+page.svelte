@@ -1,6 +1,5 @@
 <script>
 	import Header from '$lib/components/header.svelte'
-	import { onMount } from 'svelte';
 	export let data;
 	console.log(data)
 	
