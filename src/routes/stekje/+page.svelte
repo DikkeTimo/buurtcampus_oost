@@ -25,7 +25,7 @@
 
 	<li>
 		<input type="radio" name="accordion" id="second" />
-		<label for="second">voeding</label>
+		<label for="second">Voeding</label>
 		<div class="content">
 			<p>{data.stekjes[1].voeding}</p>
 		</div>
@@ -33,7 +33,7 @@
 
 	<li>
 		<input type="radio" name="accordion" id="third" />
-		<label for="third">verpotten</label>
+		<label for="third">Verpotten</label>
 		<div class="content">
 			<p>{data.stekjes[1].verpotten}</p>
 		</div>
@@ -41,7 +41,7 @@
 
 	<li>
 		<input type="radio" name="accordion" id="fourth" />
-		<label for="fourth">giftig</label>
+		<label for="fourth">Giftig</label>
 		<div class="content">
 			<p>{data.stekjes[1].giftig}</p>
 		</div>
@@ -49,7 +49,7 @@
 
 	<li>
 		<input type="radio" name="accordion" id="fifth" />
-		<label for="fifth">temperatuur</label>
+		<label for="fifth">Temperatuur</label>
 		<div class="content">
 			<p>{data.stekjes[1].temperatuur}</p>
 		</div>
@@ -57,7 +57,7 @@
 
 	<li>
 		<input type="radio" name="accordion" id="sixth" />
-		<label for="sixth">watergeven</label>
+		<label for="sixth">Watergeven</label>
 		<div class="content">
 			<p>{data.stekjes[1].watergeven}</p>
 		</div>
@@ -65,7 +65,7 @@
 
 	<li>
 		<input type="radio" name="accordion" id="seventh" />
-		<label for="seventh">zonlicht</label>
+		<label for="seventh">Zonlicht</label>
 		<div class="content">
 			<p>{data.stekjes[1].zonlicht}</p>
 		</div>
@@ -73,6 +73,9 @@
 </ul>
 
 <style>
+    @media screen and (min-width: 768px) {
+}
+
 	.container {
 		position: relative;
 		width: 100%;
