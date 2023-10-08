@@ -15,6 +15,7 @@ export async function load() {
           voeding
           watergeven
           zonlicht
+          stekken
           slug
           fotos {
             url
