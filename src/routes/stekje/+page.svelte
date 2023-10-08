@@ -1,12 +1,6 @@
 <script>
 	export let data;
 	console.log(data);
-
-	let isContentVisible = false;
-
-	function toggleContent() {
-		isContentVisible = !isContentVisible;
-	}
 </script>
 
 <section>
@@ -194,8 +188,11 @@
 		display: none;
 	}
 
-	/* Mediaquery voor desktopapparaten (schermen breder dan 768px) */
-	@media screen and (min-width: 768px) {
+	/* HIER KOMEN DE MEDIA QUERY'Z */
+
+	@media screen and (min-width: 525px) {
+		/* belangrijke code */
+
 		.container,
 		.title {
 			display: none;
@@ -214,65 +211,14 @@
 			width: 200px;
 			height: auto;
 		}
-	}
 
-	/* Verberg de accordion-stijlen (schermgroter dan 768px) */
-	@media screen and (min-width: 768px) {
-		section {
-			margin: 20px;
-		}
-
-		.accordion li {
-			padding: 5px;
-			width: auto;
-			box-shadow: black;
-			border-radius: 10px;
-			transition: padding 0.3s ease; /* Voeg een overgang van 0.3 seconden toe aan de padding met een 'ease' timing-functie */
-		}
-
-		/* dit is een kleine hover animatie  */
-		.accordion li:hover {
-			padding-left: 10px; 
-		}
-
-		.accordion li label::before {
-			display: none;
-		}
-
-		.accordion input[type='radio'] {
-			display: block;
-			position: absolute;
-			opacity: 0;
-			pointer-events: none;
-		}
-
-		.accordion .content {
-			max-height: none;
-			overflow: visible;
-			padding: 10px;
-			transition: none;
-		}
-
-		.container {
-			display: none;
-		}
-
-		/* stijl voor het weergeven van labels in uppercase */
-		.accordion li label {
-			text-transform: uppercase;
-			color: var(--color-primair);
-		}
-
-		ul.accordion {
-			display: grid;
-			grid-template-columns: repeat(2, 1fr); /* Eerste vier items in vier kolommen */
-			grid-gap: 10px;
-		}
+		/* met deze code maak ik de image Naast de beschrijving text */
 
 		.content-container {
 			display: flex;
 			border-radius: 10px;
 			overflow: hidden; /* Zorgt ervoor dat de afbeelding binnen de container blijft */
+			/* margin: 5px; */
 			padding: 10px;
 			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 			margin-bottom: 5px;
@@ -309,13 +255,69 @@
 		}
 	}
 
-
-    @media screen and (min-width: 1024px) {
-        ul.accordion {
-			display: grid;
-			grid-template-columns: repeat(4, 1fr); /* Eerste vier items in vier kolommen */
-			grid-gap: 15px;
+	/* Verberg de accordion-stijlen (schermgroter dan 768px) */
+	@media screen and (min-width: 768px) {
+		section {
+			margin: 20px;
 		}
 
-    }
+		.content-container {
+			margin: 5px;
+		}
+
+		.accordion li {
+			padding: 5px;
+			width: auto;
+			box-shadow: black;
+			border-radius: 10px;
+			transition: padding 0.3s ease;
+		}
+
+		/* dit is een kleine hover animatie  */
+		.accordion li:hover {
+			padding-left: 10px;
+		}
+
+		.accordion li label::before {
+			display: none;
+		}
+
+		.accordion input[type='radio'] {
+			display: block;
+			position: absolute;
+			opacity: 0;
+			pointer-events: none;
+		}
+
+		.accordion .content {
+			max-height: none;
+			overflow: visible;
+			padding: 10px;
+			transition: none;
+		}
+
+		.container {
+			display: none;
+		}
+
+		/* stijl voor het weergeven van labels in uppercase */
+		.accordion li label {
+			text-transform: uppercase;
+			color: var(--color-primair);
+		}
+
+		ul.accordion {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr); /* Eerste vier items in 2 kolommen */
+			grid-gap: 10px;
+		}
+	}
+
+	@media screen and (min-width: 1024px) {
+		ul.accordion {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr); /* Eerste vier items in 4 kolommen */
+			grid-gap: 15px;
+		}
+	}
 </style>
