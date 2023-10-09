@@ -18,17 +18,17 @@
 		'november',
 		'december'
 	];
-		let filteredWorkshops = data.workshops; // Initialize with all workshops
+	let filteredWorkshops = data.workshops; // Initialize with all workshops
 
-		function filterWorkshops() {
-			if (selectedMonth) {
-				filteredWorkshops = data.workshops.filter((workshop) => {
-					return workshop.datum.toLowerCase().includes(selectedMonth.toLowerCase());
-				});
-			} else {
-				filteredWorkshops = data.workshops; // Reset to all workshops if no month selected
-			}
+	function filterWorkshops() {
+		if (selectedMonth) {
+			filteredWorkshops = data.workshops.filter((workshop) => {
+				return workshop.datum.toLowerCase().includes(selectedMonth.toLowerCase());
+			});
+		} else {
+			filteredWorkshops = data.workshops; // Reset to all workshops if no month selected
 		}
+	}
 </script>
 
 <Header />
@@ -37,7 +37,7 @@
 
 <main>
 	<div class="top_info">
-		<h2>Workshops</h2>
+		<h1>Workshops</h1>
 		<p>info.......</p>
 	</div>
 
@@ -52,41 +52,44 @@
 		<button type="submit">Selecteer</button>
 	</form> -->
 
-	<form on:submit|preventDefault={filterWorkshops}>
-		<label for="month">Selecteer maand:</label>
-		<select id="month" bind:value={selectedMonth} on:change={filterWorkshops}>
-			<option value="">alles</option>
-			{#each months as month}
-				<option value={month}>{month}</option>
+	<div class="wrapper">
+		<form on:submit|preventDefault={filterWorkshops}>
+			<label for="month">Selecteer maand:</label>
+			<select id="month" bind:value={selectedMonth} on:change={filterWorkshops}>
+				<option value="">alle</option>
+				{#each months as month}
+					<option value={month}>{month}</option>
+				{/each}
+			</select>
+		</form>
+	
+		<div class="container_workshop_cards">
+			{#each filteredWorkshops as workshop}
+				<div class="card">
+					<div class="plant">
+						<img src={workshop.foto[0].url} alt="foto van een stekje" width="100" />
+					</div>
+	
+					<div class="info_workshop">
+						<h3>{workshop.naam}</h3>
+						<p>
+							<img src="src/assets/location.svg" alt="" />
+							{workshop.locatie}
+						</p>
+						<p>
+							<img src="src/assets/money.svg" alt="" />
+							{workshop.kosten}
+						</p>
+						<p>
+							<img src="src/assets/date.svg" alt="" />
+							{workshop.datum}
+						</p>
+					</div>
+				</div>
 			{/each}
-		</select>
-	</form>
-
-	<div class="container_workshop_cards">
-		{#each filteredWorkshops as workshop}
-			<div class="card">
-				<div class="plant">
-					<img src={workshop.foto[0].url} alt="foto van een stekje" width="100" />
-				</div>
-
-				<div class="info_workshop">
-					<h3>{workshop.naam}</h3>
-					<p>
-						<img src="src/assets/location.svg" alt="" />
-						{workshop.locatie}
-					</p>
-					<p>
-						<img src="src/assets/money.svg" alt="" />
-						{workshop.kosten}
-					</p>
-					<p>
-						<img src="src/assets/date.svg" alt="" />
-						{workshop.datum}
-					</p>
-				</div>
-			</div>
-		{/each}
+		</div>
 	</div>
+
 </main>
 
 <style>
@@ -103,15 +106,14 @@
 		height: 100%;
 	}
 
-	h2 {
+	h1 {
 		color: var(--color-primair);
 	}
 
 	.top_info {
 		& p,
-		h2 {
+		h1 {
 			padding: var(--padding);
-			text-align: center;
 		}
 	}
 
@@ -121,6 +123,11 @@
 		width: 10rem;
 		margin-top: 3rem;
 		margin: var(--margin);
+	}
+
+	select {
+		background-color: var(--color-primair);
+		color: #fff;
 	}
 
 	#month {
@@ -170,7 +177,7 @@
 		}
 	}
 
-	@media (min-width: 670px) {
+	@media (min-width: 767px) {
 		.container_workshop_cards {
 			display: flex;
 			/* flex-wrap: wrap; */
@@ -179,5 +186,49 @@
 		.card {
 			width: 49%;
 		}
+	}
+
+	@media (min-width: 768px) and (max-width: 1023px) {
+		.container_workshop_cards {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		.card {
+			width: 40%;
+		}
+	}
+
+	@media (min-width: 1024px) {
+
+		.wrapper {
+			display: flex;
+			justify-content: space-around;
+			border-top: 1px solid rgb(192, 190, 190);
+
+		}
+
+		.container_workshop_cards {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+
+		.top_info p,
+		.top_info h1 {
+			text-align: center;
+		}
+		.card {
+			width: 35vw;
+		}
+
+		.container_workshop_cards {
+			width: 100%;
+			margin: 0 auto;
+		}
+
+		/* form {
+			margin-left: 10%;
+		} */
 	}
 </style>
