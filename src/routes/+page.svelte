@@ -1,5 +1,6 @@
 <script>
     import {onMount} from 'svelte';
+    import Header from "$lib/components/header.svelte"
 
     export let data;
 
@@ -38,7 +39,7 @@
 
 </script>
 
-<a href="workshops">Workshops</a>
+<Header />
 
 <!-- CAROUSEL -->
 <section class="carousel">
