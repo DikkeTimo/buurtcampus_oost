@@ -39,20 +39,18 @@
 
 
 <section class="wrapper">
-<!-- hier komen de kaartjes  -->
-{#each data.stekjes as stekje}
-
-<a href={stekje.slug}>
- <article>
-	<img src="{stekje.fotos[0].url}" alt="foto van {stekje.naam}">
-	<div>
-	<h3>{stekje.naam}</h3>
-	<span>{stekje.categories[0].naam}</span>
-	</div>
- </article>
-
- </a>
-{/each}
+	<!-- hier komen de kaartjes  -->
+	{#each data.stekjes as stekje}
+		<a href={stekje.slug}>
+			<article>
+				<img src="{stekje.fotos[0].url}" alt="foto van {stekje.naam}">
+				<div>
+				<h3>{stekje.naam}</h3>
+				<span>{stekje.categories[0].naam}</span>
+				</div>
+			</article>
+		</a>
+	{/each}
 	
 </section>
 
