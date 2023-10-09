@@ -6,7 +6,6 @@
 	</div>
 
 	<ul id="links">
-		<a href="/">Home</a>
 		<a href="/all_stekjes">Stekjes</a>
 		<a href="/workshops">Workshops</a>
 		<a href="/contact">Contact</a>
@@ -78,6 +77,11 @@
 		text-decoration: none;
 	}
 
+	#links a:hover,
+	#menu a:hover {
+		color: var(--color-secundair);
+	}
+
 	#menuToggle input {
 		display: block;
 		position: absolute;
@@ -139,7 +143,7 @@
 		top: 0;
 		right: 0;
 		margin: -100px -16px 0 0;
-		margin-top: 3.4rem;
+		margin-top: 3rem;
 		padding-top: 3rem;
 		background: var(--color-primair);
 	}

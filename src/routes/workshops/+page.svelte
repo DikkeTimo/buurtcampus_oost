@@ -2,7 +2,6 @@
 	import Header from '$lib/components/header.svelte';
 	import { onMount } from 'svelte';
 	export let data;
-	console.log(data);
 
 	onMount(() => {
 		let year = new Date();
@@ -15,6 +14,24 @@
 
 		const monthInput = document.getElementById('month');
 		monthInput.value = `${currentYear}-${formatMonth(currentMonth)}`;
+
+		// Filteroption
+
+		let selectedMonth = '';
+		let filteredWorkshops = [];
+
+		function filterWorkshops() {
+			filteredWorkshops = data.workshops.filter((workshop) => {
+				const workshopDate = new Date(workshop.datum);
+				const workshopMonth = workshopDate.getMonth() + 1; // Months are 0-indexed, so add 1
+				return workshopMonth === parseInt(selectedMonth.split('-')[1]);
+			});
+		}
+
+		const button = document.getElementById("submit")
+
+		button.addEventListener("click", filteredWorkshops)
+
 	});
 </script>
 
@@ -29,6 +46,7 @@
 	<div class="input">
 		<label for="start">Selecteer maand:</label>
 		<input type="month" id="month" value="" />
+		<input id="submit" type="submit" />
 	</div>
 
 	<div class="container_workshop_cards">
@@ -122,7 +140,7 @@
 	}
 
 	.info_workshop {
-		padding: 1rem;
+		padding: 	1rem;
 
 		& h3 {
 			margin-bottom: 1rem;
