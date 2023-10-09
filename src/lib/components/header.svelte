@@ -1,8 +1,15 @@
 <header>
 	<div class="logo">
-		<img src="plantswaplogo.png" alt="" width="" height="100%" />
+		<a href="/">
+			<img src="plantswaplogo.png" alt="logo van plantswap" height="100%" />
+		</a>
 	</div>
-	<div class="links" />
+
+	<ul id="links">
+		<a href="/all_stekjes">Stekjes</a>
+		<a href="/workshops">Workshops</a>
+		<a href="/contact">Contact</a>
+	</ul>
 
 	<nav role="navigation">
 		<div id="menuToggle">
@@ -12,16 +19,19 @@
 			<span />
 			<span />
 
-			<ul id="menu">
-				<a href="/">Home</a>
-				<a href="/">Stekjes</a>
-			</ul>
+			<div class="toggle">
+				<ul id="menu">
+					<a href="/">Home</a>
+					<a href="/all_stekjes">Stekjes</a>
+					<a href="/workshops">Workshops</a>
+					<a href="/contact">Contact</a>
+				</ul>
+			</div>
 		</div>
 	</nav>
 </header>
 
 <style>
-
 	header {
 		display: flex;
 		justify-content: space-between;
@@ -38,9 +48,20 @@
 		width: 30%;
 	}
 
-	/* Hamburger menu */
+	#links {
+		display: flex;
+		justify-content: space-between;
+		width: 20rem;
+	}
 
-	nav {
+	#links a {
+		color: var(--color-primair);
+	}
+
+	/* Hamburger menu, it's all css no javascript */
+
+	nav,
+	#links {
 		padding: 1rem;
 	}
 
@@ -51,8 +72,14 @@
 		user-select: none;
 	}
 
-	#menuToggle a {
+	#menuToggle a,
+	#links a {
 		text-decoration: none;
+	}
+
+	#links a:hover,
+	#menu a:hover {
+		color: var(--color-secundair);
 	}
 
 	#menuToggle input {
@@ -90,7 +117,7 @@
 	#menuToggle input:checked ~ span {
 		opacity: 1;
 		transform: rotate(45deg) translate(-2px, -1px);
-		background: #ffffff;
+		background: var(--color-primair);
 	}
 
 	#menuToggle input:checked ~ span:nth-last-child(3) {
@@ -102,31 +129,44 @@
 		transform: rotate(-45deg) translate(0, -1px);
 	}
 
+	.toggle {
+		display: none;
+	}
+
 	#menu {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 		position: absolute;
-		width: 60vw;
+		width: 100vw;
 		height: 60vh;
 		top: 0;
 		right: 0;
 		margin: -100px -16px 0 0;
-		padding-top: 125px;
+		margin-top: 3rem;
+		padding-top: 3rem;
 		background: var(--color-primair);
-		list-style-type: none;  
-    display: none;
 	}
 
 	#menu a {
 		color: white;
 		padding: 1rem;
+		font-size: 24px;
 	}
 
-	#menuToggle input:checked ~ ul {
-    display: block;
+	#menuToggle input:checked ~ .toggle {
+		display: block;
 	}
 
-  @media (min-width: 413px) {
-    #menuToggle {
-      display: none;
-    }
-  }
+	@media (min-width: 670px) {
+		nav {
+			display: none;
+		}
+	}
+
+	@media (max-width: 670px) {
+		#links {
+			display: none;
+		}
+	}
 </style>

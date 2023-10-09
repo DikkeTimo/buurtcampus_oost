@@ -1,8 +1,10 @@
 <script>
-	import Header from '$lib/components/header.svelte'
+	import Header from '$lib/components/header.svelte';
+	import { onMount } from 'svelte';
 	export let data;
 	console.log(data)
-	
+
+
 </script>
 
 <Header/>
@@ -25,6 +27,7 @@
 </section>
 
 <section class="filter">
+	
 <label>
   <input type="checkbox" id="moeilijkheidsgraad" value="makkelijk"> Makkelijk
 </label>
@@ -33,6 +36,7 @@
   <input type="checkbox" id="moeilijkheidsgraad" value="uitdagend"> Uitdagend
 </label>
 </section>
+
 
 <section class="wrapper">
 <!-- hier komen de kaartjes  -->
@@ -46,7 +50,8 @@
 	<span>{stekje.categories[0].naam}</span>
 	</div>
  </article>
-</a>
+
+ </a>
 {/each}
 	
 </section>
@@ -87,6 +92,7 @@
 		gap: 1rem;
 		margin: 2rem;
 	}
+
 
 	.wrapper{
 		/* tijdelijk mabey @media */
