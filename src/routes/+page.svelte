@@ -42,7 +42,7 @@
 
 <Header />
 
-<NavDark />
+<!-- <NavDark /> -->
 <!-- CAROUSEL -->
 <section class="carousel">
 

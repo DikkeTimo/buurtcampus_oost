@@ -1,45 +1,39 @@
 <script>
-	import Header from '$lib/components/header.svelte';
-	import NavDark from '$lib/components/NavDark.svelte'
-
-	import { onMount } from 'svelte';
+	import Header from '$lib/components/Header.svelte';
+	import NavDark from '$lib/components/NavDark.svelte';
 	export let data;
 
-	onMount(() => {
-		let year = new Date();
-		let currentYear = year.getFullYear();
-		let currentMonth = year.getMonth() + 1;
-
-		function formatMonth(month) {
-			return month < 10 ? `0${month}` : `${month}`;
-		}
-
-		const monthInput = document.getElementById('month');
-		monthInput.value = `${currentYear}-${formatMonth(currentMonth)}`;
-
-		// Filteroption
-
-		let selectedMonth = '';
-		let filteredWorkshops = [];
+	let selectedMonth = '';
+	const months = [
+		'januari',
+		'februari',
+		'maart',
+		'april',
+		'mei',
+		'juni',
+		'juli',
+		'augustus',
+		'september',
+		'oktober',
+		'november',
+		'december'
+	];
+		let filteredWorkshops = data.workshops; // Initialize with all workshops
 
 		function filterWorkshops() {
-			filteredWorkshops = data.workshops.filter((workshop) => {
-				const workshopDate = new Date(workshop.datum);
-				const workshopMonth = workshopDate.getMonth() + 1; // Months are 0-indexed, so add 1
-				return workshopMonth === parseInt(selectedMonth.split('-')[1]);
-			});
+			if (selectedMonth) {
+				filteredWorkshops = data.workshops.filter((workshop) => {
+					return workshop.datum.toLowerCase().includes(selectedMonth.toLowerCase());
+				});
+			} else {
+				filteredWorkshops = data.workshops; // Reset to all workshops if no month selected
+			}
 		}
-
-		const button = document.getElementById("submit")
-
-		button.addEventListener("click", filteredWorkshops)
-
-	});
 </script>
 
 <Header />
 <!-- <Header /> -->
-<NavDark />
+<!-- <NavDark /> -->
 
 <main>
 	<div class="top_info">
@@ -47,14 +41,29 @@
 		<p>info.......</p>
 	</div>
 
-	<div class="input">
-		<label for="start">Selecteer maand:</label>
-		<input type="month" id="month" value="" />
-		<input id="submit" type="submit" />
-	</div>
+	<!-- <form>
+		<label for="month">selecteer maand:</label>
+		<select id="month">
+			<option value="">alles</option>
+			{#each months as month}
+				<option value={month}>{month}</option>
+			{/each}
+		</select>
+		<button type="submit">Selecteer</button>
+	</form> -->
+
+	<form on:submit|preventDefault={filterWorkshops}>
+		<label for="month">Selecteer maand:</label>
+		<select id="month" bind:value={selectedMonth} on:change={filterWorkshops}>
+			<option value="">alles</option>
+			{#each months as month}
+				<option value={month}>{month}</option>
+			{/each}
+		</select>
+	</form>
 
 	<div class="container_workshop_cards">
-		{#each data.workshops as workshop}
+		{#each filteredWorkshops as workshop}
 			<div class="card">
 				<div class="plant">
 					<img src={workshop.foto[0].url} alt="foto van een stekje" width="100" />
@@ -63,15 +72,15 @@
 				<div class="info_workshop">
 					<h3>{workshop.naam}</h3>
 					<p>
-						<img src="location.svg" alt="" />
+						<img src="src/assets/location.svg" alt="" />
 						{workshop.locatie}
 					</p>
 					<p>
-						<img src="money.svg" alt="" />
+						<img src="src/assets/money.svg" alt="" />
 						{workshop.kosten}
 					</p>
 					<p>
-						<img src="date.svg" alt="" />
+						<img src="src/assets/date.svg" alt="" />
 						{workshop.datum}
 					</p>
 				</div>
@@ -89,17 +98,28 @@
 	}
 
 	main {
-		background-color: #f2f2f2;
+		/* background-color: #f2f2f2; */
 		width: 100%;
-	}
-	h2 {
-		padding: var(--margin);
+		height: 100%;
 	}
 
-	.input {
+	h2 {
+		color: var(--color-primair);
+	}
+
+	.top_info {
+		& p,
+		h2 {
+			padding: var(--padding);
+			text-align: center;
+		}
+	}
+
+	form {
 		display: flex;
-		justify-content: space-between;
-		align-items: center;
+		flex-direction: column;
+		width: 10rem;
+		margin-top: 3rem;
 		margin: var(--margin);
 	}
 
@@ -113,11 +133,6 @@
 
 	.container_workshop_cards {
 		margin-bottom: var(--margin);
-	}
-
-	.top_info h2,
-	.top_info p {
-		text-align: center;
 	}
 
 	.card {
@@ -144,7 +159,7 @@
 	}
 
 	.info_workshop {
-		padding: 	1rem;
+		padding: 1rem;
 
 		& h3 {
 			margin-bottom: 1rem;
@@ -152,6 +167,17 @@
 
 		& p {
 			margin-bottom: var(--padding);
+		}
+	}
+
+	@media (min-width: 670px) {
+		.container_workshop_cards {
+			display: flex;
+			/* flex-wrap: wrap; */
+			/* justify-content: space-around; */
+		}
+		.card {
+			width: 49%;
 		}
 	}
 </style>
