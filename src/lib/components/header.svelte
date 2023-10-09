@@ -1,7 +1,7 @@
 <header>
 	<div class="logo">
 		<a href="/">
-			<img src="plantswaplogo.png" alt="logo van plantswap" height="100%" />
+			<img src="src/assets/plantswaplogo.png" alt="logo van plantswap" height="100%" />
 		</a>
 	</div>
 
