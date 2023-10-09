@@ -1,6 +1,10 @@
 <script>
     import {onMount} from 'svelte';
+<<<<<<< Updated upstream
     import Header from "$lib/components/header.svelte"
+=======
+	import NavDark from '../lib/components/NavDark.svelte';
+>>>>>>> Stashed changes
 
     export let data;
 
@@ -39,8 +43,12 @@
 
 </script>
 
+<<<<<<< Updated upstream
 <Header />
 
+=======
+<NavDark />
+>>>>>>> Stashed changes
 <!-- CAROUSEL -->
 <section class="carousel">
 
