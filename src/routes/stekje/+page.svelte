@@ -96,7 +96,7 @@
 <style>
 	.container {
 		position: relative;
-		width: 100%;
+		width: 102%; /* --------------- 100% IS NOT FULL SCREEN WHY ???????  */
 		height: 480px;
 		background: url('https://media.graphassets.com/uy5y3w0FSxuPvUEQthVu') no-repeat center
 			center/cover;
@@ -245,9 +245,11 @@
 		.beschrijving {
 			display: flex;
 			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			text-align: center;
+			/* align-items: center; */
+			/* justify-content: center; */
+			/* text-align: center; */
+            margin: 28px; /* dit kan op een andere MANIERRR */
+            max-width: 45%;
 		}
 
 		.beschrijving p {

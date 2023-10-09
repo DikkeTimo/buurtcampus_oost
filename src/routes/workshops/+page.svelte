@@ -1,5 +1,7 @@
 <script>
 	import Header from '$lib/components/header.svelte';
+	import NavDark from '$lib/components/NavDark.svelte'
+
 	import { onMount } from 'svelte';
 	export let data;
 
@@ -36,6 +38,8 @@
 </script>
 
 <Header />
+<!-- <Header /> -->
+<NavDark />
 
 <main>
 	<div class="top_info">
