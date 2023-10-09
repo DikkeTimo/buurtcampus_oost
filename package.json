@@ -21,6 +21,7 @@
 	"dependencies": {
 		"@graphcms/uix-sdk": "^0.2.7",
 		"graphql": "^16.8.1",
-		"graphql-request": "^6.1.0"
+		"graphql-request": "^6.1.0",
+		"gsap": "^3.12.2"
 	}
 }

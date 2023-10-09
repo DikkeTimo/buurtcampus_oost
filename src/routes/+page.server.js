@@ -18,6 +18,8 @@ import {hygraph} from '$lib/utils/hygraph.js';
 //     return await hygraph.request(query);
 // }
 
+
+
 // MOST RECENT STEKJESE HOMEPAGE QUERY
 export async function load() {
     let query = gql`
@@ -33,6 +35,13 @@ export async function load() {
         url
       }
     }
+    
+    headers {
+    imagesCarousel {
+      url
+    }
+    id
+  }
   }
 `;
     return await hygraph.request(query);

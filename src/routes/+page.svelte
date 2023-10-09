@@ -1,12 +1,17 @@
 <script>
     import {onMount} from 'svelte';
+    import Header from "$lib/components/header.svelte"
+	import NavDark from '../lib/components/NavDark.svelte';
 
     export let data;
+
+    console.log(data);
 
     let slidesContainer;
     let slideWidth;
     let currentSlide = 0;
     let intervalId;
+
 
     onMount(() => {
         slidesContainer = document.querySelector('.slides');
@@ -38,23 +43,23 @@
 
 </script>
 
-<a href="workshops">Workshops</a>
+<Header/>
 
+<NavDark />
 <!-- CAROUSEL -->
 <section class="carousel">
 
     <div class="slides">
 
-        <div class="slides-item slide-1" id="slide-1"><img src="src/assets/expample-plant.jpg"></div>
-        <div class="slides-item slide-2" id="slide-2">2</div>
-        <div class="slides-item slide-3" id="slide-3">3</div>
+        <div class="slides-item slide-1" id="slide-1"><img src={data.headers[0].imagesCarousel.url}
+                                                           alt="foto van een stekje"/></div>
+        <div class="slides-item slide-2" id="slide-2"><img src={data.headers[1].imagesCarousel.url}
+                                                           alt="foto van een stekje"/></div>
+        <div class="slides-item slide-3" id="slide-3"><img src={data.headers[2].imagesCarousel.url}
+                                                           alt="foto van een stekje"/></div>
 
     </div>
 </section>
-
-<!--{#each data.headers as headers}-->
-<!--    <img src={headers.url} alt="1"/>-->
-<!--{/each}-->
 
 <!-- SECTION 1 HOW IT WORKS -->
 <section class="how-it-works">
@@ -88,11 +93,18 @@
         <div class="flex-wrapper-recent-stekjes">
 
             {#each data.stekjes as stekje}
-
                 <img src={stekje.fotos[0].url} alt="foto van een stekje" width="100"/>
             {/each}
         </div>
     </div>
+
+    <div class="button-stekjes">
+        <a href="/stekje"> <button>
+            <p>Bekijk alle stekjes!</p>
+        </button></a>
+    </div>
+
+
 
 </section>
 
@@ -112,8 +124,9 @@
         planten moeten zorgen en kopen nieuwe als ze dood gaan. In het kader van duurzaamheid, gezondheid en meer
         sociale connectie, is PlantSwap Amsterdam een plek van sociale ontmoeting, waar mensen samen leren over
         planten.</p>
-
 </section>
+
+
 
 
 <!-------------CSS------------->
@@ -121,7 +134,7 @@
 
     /* ------------ CAROUSEL ------------*/
     .carousel {
-        margin: 0 auto;
+        margin: 0;
         overflow: hidden;
         text-align: center;
 
@@ -135,6 +148,10 @@
         scrollbar-width: none;
     }
 
+    .slides img {
+        width: 38rem;
+    }
+
     .slides::-webkit-scrollbar {
         display: none;
     }
@@ -143,7 +160,6 @@
         align-items: center;
         display: flex;
         flex-shrink: 0;
-        font-size: 100px;
         height: 400px;
         justify-content: center;
         margin: 0 1rem;
@@ -151,23 +167,11 @@
         transform: scale(1);
         transform-origin: center center;
         transition: transform .5s;
-        width: 100%;
+        width: 120%;
         scroll-snap-align: start;
 
     }
 
-    .slide-1 img {
-        /*background-color: #fdc;*/
-        width: 38rem;
-    }
-
-    .slide-2 {
-        background-color: #bfd;
-    }
-
-    .slide-3 {
-        background-color: #cdf;
-    }
 
     /* ------------ SECTION HOW IT WORKS ------------*/
 
@@ -232,6 +236,18 @@
         border-radius: 5px;
     }
 
+    .button-stekjes button {
+        background-color: var(--accent-color-sec);
+        height: 2rem;
+        border-radius: 5px;
+        border: none;
+        margin-top: 2rem;
+        margin-left: 3.5rem;
+        color: white;
+
+    }
+
+    
     /* ------------ SECTION ABOUT BUURTCAMPUS OOST ------------*/
     h4 {
         font-size: 23px;
@@ -255,8 +271,6 @@
         margin-left: 3.5rem;
         max-width: 18rem;
     }
-
-
 
 
 </style>
