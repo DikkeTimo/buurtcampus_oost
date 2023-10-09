@@ -6,23 +6,24 @@
 <section>
 	<div class="container">
 		<div class="title">
-			<h1>{data.stekjes[1].naam}</h1>
+			<h1>{data.stekje.naam}</h1>
 		</div>
 	</div>
 
 	<div class="content-container">
 		<div class="container2">
 			<div class="title2">
-				<h1>{data.stekjes[1].naam}</h1>
+				<h1>{data.stekje.naam}</h1>
 			</div>
 			<div class="image-container">
-				<img src="https://media.graphassets.com/uy5y3w0FSxuPvUEQthVu" alt="" />
+				<!-- <img src="https://media.graphassets.com/uy5y3w0FSxuPvUEQthVu" alt="" /> -->
+                <img src="{data.stekje.fotos[0].url}" alt="foto van {data.stekje.naam}">
 			</div>
 		</div>
 
 		<div class="beschrijving">
 			<h2>Beschrijving</h2>
-			<p>{data.stekjes[1].beschrijving}</p>
+			<p>{data.stekje.beschrijving}</p>
 		</div>
 	</div>
 
@@ -31,7 +32,7 @@
 			<input type="radio" name="accordion" id="first" checked />
 			<label for="first">Landherkomst</label>
 			<div class="content">
-				<p>{data.stekjes[1].landvanherkomst}</p>
+				<p>{data.stekje.landvanherkomst}</p>
 			</div>
 		</li>
 
@@ -39,7 +40,7 @@
 			<input type="radio" name="accordion" id="second" />
 			<label for="second">Voeding</label>
 			<div class="content">
-				<p>{data.stekjes[1].voeding}</p>
+				<p>{data.stekje.voeding}</p>
 			</div>
 		</li>
 
@@ -47,7 +48,7 @@
 			<input type="radio" name="accordion" id="fifth" />
 			<label for="fifth">Temperatuur</label>
 			<div class="content">
-				<p>{data.stekjes[1].temperatuur}</p>
+				<p>{data.stekje.temperatuur}</p>
 			</div>
 		</li>
 
@@ -55,7 +56,7 @@
 			<input type="radio" name="accordion" id="fourth" />
 			<label for="fourth">Giftig</label>
 			<div class="content">
-				<p>{data.stekjes[1].giftig}</p>
+				<p>{data.stekje.giftig}</p>
 			</div>
 		</li>
 
@@ -63,7 +64,7 @@
 			<input type="radio" name="accordion" id="third" />
 			<label for="third">Verpotten</label>
 			<div class="content">
-				<p>{data.stekjes[1].verpotten}</p>
+				<p>{data.stekje.verpotten}</p>
 			</div>
 		</li>
 
@@ -71,7 +72,7 @@
 			<input type="radio" name="accordion" id="sixth" />
 			<label for="sixth">Watergeven</label>
 			<div class="content">
-				<p>{data.stekjes[1].watergeven}</p>
+				<p>{data.stekje.watergeven}</p>
 			</div>
 		</li>
 
@@ -79,7 +80,7 @@
 			<input type="radio" name="accordion" id="seventh" />
 			<label for="seventh">Zonlicht</label>
 			<div class="content">
-				<p>{data.stekjes[1].zonlicht}</p>
+				<p>{data.stekje.zonlicht}</p>
 			</div>
 		</li>
 
@@ -87,11 +88,28 @@
 			<input type="radio" name="accordion" id="eighth" />
 			<label for="eighth">Stekken</label>
 			<div class="content">
-				<p>{data.stekjes[1].stekken}</p>
+				<p>{data.stekje.stekken}</p>
 			</div>
 		</li>
 	</ul>
 </section>
+
+
+
+<details name="stekje-details">
+    <summary>Watergeven</summary>
+    asdfsadff
+</details>
+
+<details name="stekje-details">
+    <summary>Zonlicht</summary>
+    details
+</details>
+
+<details name="stekje-details">
+    <summary>Stekken</summary>
+    abeeeeafasdfasdf
+</details>
 
 <style>
 	.container {
@@ -249,12 +267,9 @@
 			/* justify-content: center; */
 			/* text-align: center; */
             margin: 28px; /* dit kan op een andere MANIERRR */
-            max-width: 45%;
+            max-width: 35rem;
 		}
 
-		.beschrijving p {
-			font-size: large;
-		}
 	}
 
 	/* Verberg de accordion-stijlen (schermgroter dan 768px) */
