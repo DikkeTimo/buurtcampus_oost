@@ -21,7 +21,7 @@
 		setActiveLink();
 
 		gsap.from('nav', {
-			delay: 1.5,
+			delay: 0.5,
 			duration: 1,
 			y: '-100%',
 			ease: 'Power4.easeOut'

@@ -1,10 +1,17 @@
 <script>
+	import Header from '$lib/components/Header.svelte';
+	import Footer from '../../lib/components/footer.svelte';
 	export let data;
 	console.log(data);
 </script>
 
+<Header/>
+
 <section>
 	<div class="container">
+		<div class="image">
+			<img src={data.stekje.fotos[0].url} alt="foto van {data.stekje.naam}" />
+		</div>
 		<div class="title">
 			<h1>{data.stekje.naam}</h1>
 		</div>
@@ -17,7 +24,7 @@
 			</div>
 			<div class="image-container">
 				<!-- <img src="https://media.graphassets.com/uy5y3w0FSxuPvUEQthVu" alt="" /> -->
-                <img src="{data.stekje.fotos[0].url}" alt="foto van {data.stekje.naam}">
+				<img src={data.stekje.fotos[0].url} alt="foto van {data.stekje.naam}" />
 			</div>
 		</div>
 
@@ -94,37 +101,55 @@
 	</ul>
 </section>
 
+<Footer />
 
 
-<details name="stekje-details">
-    <summary>Watergeven</summary>
-    asdfsadff
-</details>
-
-<details name="stekje-details">
-    <summary>Zonlicht</summary>
-    details
-</details>
-
-<details name="stekje-details">
-    <summary>Stekken</summary>
-    abeeeeafasdfasdf
-</details>
+<!-- <details name="stekje-details">
+	<summary>Watergeven</summary>
+	asdfsadff
+</details> -->
 
 <style>
-	.container {
+	.image {
 		position: relative;
-		width: 102%; /* --------------- 100% IS NOT FULL SCREEN WHY ???????  */
+		width: 100vw;
+		height: 100vh;
+		overflow: hidden;
+	}
+
+	.image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover; /* This ensures the image covers the whole container */
+	}
+
+	.title {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		background-color: rgba(0, 0, 0, 0.5); /* Background color for better readability */
+		padding: 20px;
+	}
+
+	.title h1 {
+		color: white;
+		margin: 0;
+	}
+	
+	/* .container {
+		position: relative;
+		width: 100%; 
 		height: 480px;
 		background: url('https://media.graphassets.com/uy5y3w0FSxuPvUEQthVu') no-repeat center
 			center/cover;
 		text-align: left;
 		color: white;
-	}
+	} */
 
 	.title {
 		position: absolute;
 		left: 0;
+		width: 100%;
 		bottom: 0;
 		background-color: rgba(0, 0, 0, 0.3);
 		padding: 20px;
@@ -146,6 +171,8 @@
 	.accordion li label {
 		display: flex;
 		align-items: center;
+		color: var(--color-primair);
+		text-transform: uppercase;
 		padding: 10px;
 		cursor: pointer;
 	}
@@ -153,8 +180,9 @@
 	label::before {
 		content: '+';
 		margin-right: 10px;
+		color: black;
 		font-size: 24px;
-		font-weight: 600;
+		font-weight: 500;
 	}
 
 	input[type='radio'] {
@@ -188,7 +216,7 @@
 
 	.beschrijving h2 {
 		color: var(--color-primair);
-		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+		/* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); */
 	}
 
 	/* Standaard stijlen die gelden voor alle apparaten */
@@ -266,10 +294,9 @@
 			/* align-items: center; */
 			/* justify-content: center; */
 			/* text-align: center; */
-            margin: 28px; /* dit kan op een andere MANIERRR */
-            max-width: 35rem;
+			margin: 28px; /* dit kan op een andere MANIERRR */
+			max-width: 35rem;
 		}
-
 	}
 
 	/* Verberg de accordion-stijlen (schermgroter dan 768px) */

@@ -39,7 +39,8 @@
 		height: 10vh;
 		-webkit-box-shadow: 0px 1px 5px 0px rgba(66, 68, 90, 1);
 		-moz-box-shadow: 0px 1px 5px 0px rgba(66, 68, 90, 1);
-		box-shadow: 0px 1px -5px 0px rgba(66, 68, 90, 1);
+		box-shadow: 0px 1px -1px 0px rgb(66, 68, 90);
+		font-size: 1em;
 	}
 
 	.logo {
@@ -51,7 +52,7 @@
 	#links {
 		display: flex;
 		justify-content: space-between;
-		width: 20rem;
+		width: 18rem;
 	}
 
 	#links a {
