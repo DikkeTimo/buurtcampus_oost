@@ -47,9 +47,9 @@
 <Header/>
 
 
-<NavDark/>
+<!-- <NavDark/>
 
- <NavDark />
+ <NavDark /> -->
 
 <!-- CAROUSEL -->
 <section class="carousel">
