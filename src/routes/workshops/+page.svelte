@@ -1,7 +1,7 @@
 <script>
-	import Header from '$lib/components/Header.svelte';
-	import NavDark from '$lib/components/NavDark.svelte';
-	import Footer from '../../lib/components/footer.svelte';
+	// import Header from '$lib/components/Header.svelte';
+	// import NavDark from '$lib/components/NavDark.svelte';
+	// import Footer from '../../lib/components/footer.svelte';
 	export let data;
 
 	let selectedMonth = '';
