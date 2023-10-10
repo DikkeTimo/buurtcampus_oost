@@ -19,7 +19,7 @@
 		'november',
 		'december'
 	];
-	let filteredWorkshops = data.workshops; // Data van de workshops in filteredWorkshops 
+	let filteredWorkshops = data.workshops; // Data van de workshops in filteredWorkshops
 
 	function filterWorkshops() {
 		if (selectedMonth) {
@@ -37,7 +37,6 @@
 <!-- <NavDark /> -->
 
 <main>
-
 	<!-- bovenste gedeelde intro -->
 	<div class="top_info">
 		<h1>Workshops</h1>
@@ -46,9 +45,10 @@
 			vaardigheden kunnen verwerven, nieuwe kennis kunnen opdoen en vaak ook nieuwe mensen kunnen
 			ontmoeten. Het idee achter jouw website om een overzicht te bieden van beschikbare workshops
 			is geweldig, omdat het mensen kan helpen om gemakkelijk toegang te krijgen tot deze
-			waardevolle leermogelijkheden. Ontdek en Leer met Onze Workshopgids Welkom bij Plantswap, dé plek om
-			workshops te ontdekken die jouw vaardigheden kunnen verbeteren, je passies kunnen verdiepen en
-			je horizon kunnen verbreden.
+			waardevolle leermogelijkheden. Ontdek en Leer met Onze Workshopgids Welkom bij Plantswap, dé
+			plek om workshops te ontdekken die jouw vaardigheden kunnen verbeteren, je passies kunnen
+			verdiepen en je horizon kunnen verbreden.
+		</p>
 	</div>
 
 	<div class="wrapper">
@@ -89,7 +89,6 @@
 			{/each}
 		</div>
 	</div>
-
 
 	<Footer />
 </main>
@@ -179,9 +178,8 @@
 		}
 	}
 
-/* media query tablet */
+	/* media query tablet */
 	@media (min-width: 768px) and (max-width: 1023px) {
-
 		.wrapper {
 			display: flex;
 		}
