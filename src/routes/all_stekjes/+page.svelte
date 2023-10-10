@@ -120,6 +120,7 @@
 
 	.wrapper a {
 		text-decoration: none;
+		padding-bottom: 2rem;
 	}
 
 	article {
