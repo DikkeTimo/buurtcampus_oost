@@ -1,6 +1,7 @@
 <script>
 	import Header from '$lib/components/header.svelte';
 	import { onMount } from 'svelte';
+	import Footer from '../../lib/components/footer.svelte';
 	export let data;
 	// console.log(data)
 
@@ -53,6 +54,8 @@
 	{/each}
 	
 </section>
+
+<Footer />
 
 <style>
 	/* styling van mijn pagina */

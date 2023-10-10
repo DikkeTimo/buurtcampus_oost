@@ -2,6 +2,7 @@
     import {onMount} from 'svelte';
     import Header from "$lib/components/header.svelte"
     import NavDark from '../lib/components/NavDark.svelte';
+	import Footer from '../lib/components/footer.svelte';
 
     export let data;
 
@@ -46,9 +47,9 @@
 <Header/>
 
 
-<NavDark/>
+<!-- <NavDark/>
 
- <NavDark />
+ <NavDark /> -->
 
 <!-- CAROUSEL -->
 <section class="carousel">
@@ -151,6 +152,8 @@
         <img src="src/assets/netwerk.png">
     </div>
 </section>
+
+<Footer />
 
 
 <!-------------CSS------------->

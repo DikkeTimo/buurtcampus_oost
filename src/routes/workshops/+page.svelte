@@ -1,6 +1,7 @@
 <script>
 	import Header from '$lib/components/Header.svelte';
 	import NavDark from '$lib/components/NavDark.svelte';
+	import Footer from '../../lib/components/footer.svelte';
 	export let data;
 
 	let selectedMonth = '';
@@ -32,13 +33,19 @@
 </script>
 
 <Header />
-<!-- <Header /> -->
 <!-- <NavDark /> -->
 
 <main>
 	<div class="top_info">
 		<h1>Workshops</h1>
-		<p>info.......</p>
+		<p>
+			Natuurlijk! Workshops zijn fantastische leermogelijkheden waarbij deelnemers praktische
+			vaardigheden kunnen verwerven, nieuwe kennis kunnen opdoen en vaak ook nieuwe mensen kunnen
+			ontmoeten. Het idee achter jouw website om een overzicht te bieden van beschikbare workshops
+			is geweldig, omdat het mensen kan helpen om gemakkelijk toegang te krijgen tot deze
+			waardevolle leermogelijkheden. Ontdek en Leer met Onze Workshopgids Welkom bij Plantswap, dé plek om
+			workshops te ontdekken die jouw vaardigheden kunnen verbeteren, je passies kunnen verdiepen en
+			je horizon kunnen verbreden.
 	</div>
 
 	<!-- <form>
@@ -62,14 +69,14 @@
 				{/each}
 			</select>
 		</form>
-	
+
 		<div class="container_workshop_cards">
 			{#each filteredWorkshops as workshop}
 				<div class="card">
 					<div class="plant">
 						<img src={workshop.foto[0].url} alt="foto van een stekje" width="100" />
 					</div>
-	
+
 					<div class="info_workshop">
 						<h3>{workshop.naam}</h3>
 						<p>
@@ -90,6 +97,8 @@
 		</div>
 	</div>
 
+
+	<Footer />
 </main>
 
 <style>
@@ -114,6 +123,7 @@
 		& p,
 		h1 {
 			padding: var(--padding);
+			line-height: 1.7;
 		}
 	}
 
@@ -143,22 +153,21 @@
 	}
 
 	.card {
-		border-radius: var(--borderr);
-		background-color: #fff;
+		border-radius: var(--border-radius);
+		background-color: var(--background-color);
 		margin: var(--margin);
 		max-width: 100%;
-		-webkit-box-shadow: 0px 1px 5px 0px rgba(66, 68, 90, 1);
-		-moz-box-shadow: 0px 1px 5px 0px rgba(66, 68, 90, 1);
-		box-shadow: 0px 1px 5px 0px rgba(66, 68, 90, 1);
+		box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 	}
 
 	.plant {
+		padding: 1rem;
 		width: 100%;
-		height: 212px;
+		height: 250px;
 	}
 
 	.plant img {
-		border-radius: var(--borderr) var(--borderr) 0 0;
+		border-radius: var(--border-radius);
 		object-fit: cover;
 		object-position: center;
 		width: 100%;
@@ -177,18 +186,13 @@
 		}
 	}
 
-	@media (min-width: 767px) {
-		.container_workshop_cards {
-			display: flex;
-			/* flex-wrap: wrap; */
-			/* justify-content: space-around; */
-		}
-		.card {
-			width: 49%;
-		}
-	}
+
 
 	@media (min-width: 768px) and (max-width: 1023px) {
+
+		.wrapper {
+			display: flex;
+		}
 		.container_workshop_cards {
 			display: flex;
 			flex-wrap: wrap;
@@ -197,15 +201,26 @@
 		.card {
 			width: 40%;
 		}
+
+		.top_info p,
+		.top_info h1 {
+			margin-top: 1rem;
+			margin-left: 1rem;
+			text-align: center;
+		}
+
+		form {
+			border: 2px solid var(--background-color);
+			border-radius: var(--border-radius);
+			padding: 1rem;
+			width: 40%;
+		}
 	}
 
 	@media (min-width: 1024px) {
-
 		.wrapper {
 			display: flex;
 			justify-content: space-around;
-			border-top: 1px solid rgb(192, 190, 190);
-
 		}
 
 		.container_workshop_cards {
@@ -216,10 +231,21 @@
 
 		.top_info p,
 		.top_info h1 {
+			margin-top: 1rem;
+			margin-left: 1rem;
 			text-align: center;
+		}
+
+		.top_info p {
+			margin: 0 auto;
+			width: 35rem;
 		}
 		.card {
 			width: 35vw;
+		}
+
+		.plant {
+			height: 350px;
 		}
 
 		.container_workshop_cards {
@@ -227,8 +253,11 @@
 			margin: 0 auto;
 		}
 
-		/* form {
-			margin-left: 10%;
-		} */
+		form {
+			border: 2px solid var(--background-color);
+			border-radius: var(--border-radius);
+			padding: 1rem;
+			width: 25%;
+		}
 	}
 </style>
