@@ -3,7 +3,21 @@
 	import { onMount } from 'svelte';
 	export let data;
 	// console.log(data)
+ 	let selectedCategories = []; // Initialize selectedCategories as an empty array
 
+	// Event handler for checkbox change
+	function handleCheckboxChange(event) {
+		const category = event.target.id;
+
+		// Check if the category is already selected
+		if (selectedCategories.includes(category)) {
+			// If selected, remove it
+			selectedCategories = selectedCategories.filter((item) => item !== category);
+		} else {
+			// If not selected, add it
+			selectedCategories = [...selectedCategories, category];
+		}
+	}
 
 </script>
 
@@ -27,32 +41,36 @@
 </section>
 
 
+
 <section class="filter">
-  <label>
-    <input type="checkbox" id="makkelijkheidsgraad" > Makkelijk
-  </label>
+	<label>
+		<input type="checkbox" id="makkelijkheidsgraad" on:change={handleCheckboxChange}> Makkelijk
+	</label>
 
-  <label>
-    <input type="checkbox" id="moeilijkheidsgraad" > Uitdagend
-  </label>
+	<label>
+		<input type="checkbox" id="moeilijkheidsgraad" on:change={handleCheckboxChange}> Uitdagend
+	</label>
 </section>
-
 
 <section class="wrapper">
-	<!-- hier komen de kaartjes  -->
+	<!-- hier komen de kaartjes -->
 	{#each data.stekjes as stekje}
-		<a href={stekje.slug}>
-			<article class="{stekje.categories[0].naam}" >
-				<img src="{stekje.fotos[0].url}" alt="foto van {stekje.naam}">
-				<div>
-				<h3>{stekje.naam}</h3>
-				<span>{stekje.categories[0].naam}</span>
-				</div>
-			</article>
-		</a>
+		{#if selectedCategories.length === 0 || selectedCategories.includes(stekje.categories[0].naam)}
+			<a href={stekje.slug}>
+				<article class="{stekje.categories[0].naam}">
+					<img src="{stekje.fotos[0].url}" alt="foto van {stekje.naam}">
+					<div>
+						<h3>{stekje.naam}</h3>
+						<span><img src="src/assets/info-logo.png" alt="meer info"></span>
+					</div>
+				</article>
+			</a>
+		{/if}
 	{/each}
-	
 </section>
+
+
+
 
 <style>
 	/* styling van mijn pagina */
@@ -88,7 +106,8 @@
 	.filter{
 		display: flex;
 		gap: 1rem;
-		margin: 2rem;
+		margin: 2.5rem;
+		margin-left: 10%;
 	}
 
 
@@ -100,6 +119,10 @@
 		margin: 2rem;
 		justify-content: center;
         align-items: center;
+	}
+
+	.wrapper a{
+		text-decoration: none;
 	}
 
 	article{
@@ -132,6 +155,23 @@
 		color: whitesmoke;
 		top: 177px;
 		position: relative;
+	}
+
+	article div h3{
+		padding: 0.5rem;
+		font-size: 20px;
+	}
+
+	article div span img{
+		height: 30px;
+		width: auto;
+		left: 155px;
+		top: 45px;
+		/* top: -170px; */
+	}
+
+	article:hover{
+		top: -10px;
 	}
 
 </style>
