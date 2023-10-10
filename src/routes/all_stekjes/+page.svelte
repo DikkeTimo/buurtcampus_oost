@@ -2,7 +2,7 @@
 	import Header from '$lib/components/header.svelte';
 	import { onMount } from 'svelte';
 	export let data;
-	console.log(data)
+	// console.log(data)
 
 
 </script>
@@ -28,14 +28,13 @@
 
 
 <section class="filter">
-	
-<label>
-  <input type="checkbox" id="moeilijkheidsgraad" value="makkelijk"> Makkelijk
-</label>
+  <label>
+    <input type="checkbox" id="makkelijkheidsgraad" > Makkelijk
+  </label>
 
-<label>
-  <input type="checkbox" id="moeilijkheidsgraad" value="uitdagend"> Uitdagend
-</label>
+  <label>
+    <input type="checkbox" id="moeilijkheidsgraad" > Uitdagend
+  </label>
 </section>
 
 
@@ -43,7 +42,7 @@
 	<!-- hier komen de kaartjes  -->
 	{#each data.stekjes as stekje}
 		<a href={stekje.slug}>
-			<article>
+			<article class="{stekje.categories[0].naam}" >
 				<img src="{stekje.fotos[0].url}" alt="foto van {stekje.naam}">
 				<div>
 				<h3>{stekje.naam}</h3>
@@ -103,7 +102,6 @@
         align-items: center;
 	}
 
-
 	article{
 		display: flex;
 		flex-direction: column;
@@ -135,4 +133,5 @@
 		top: 177px;
 		position: relative;
 	}
+
 </style>
