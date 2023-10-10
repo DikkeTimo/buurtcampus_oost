@@ -1,4 +1,6 @@
 <script>
+	import Footer from "../../lib/components/footer.svelte";
+
 	export let data;
 	console.log(data);
 </script>
@@ -92,6 +94,8 @@
 		</li>
 	</ul>
 </section>
+
+<Footer />
 
 <style>
 	.container {
