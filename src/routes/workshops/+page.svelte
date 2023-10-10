@@ -19,12 +19,13 @@
 		'november',
 		'december'
 	];
-	let filteredWorkshops = data.workshops; // Initialize with all workshops
+	let filteredWorkshops = data.workshops; // Data van de workshops in filteredWorkshops 
 
 	function filterWorkshops() {
 		if (selectedMonth) {
 			filteredWorkshops = data.workshops.filter((workshop) => {
 				return workshop.datum.toLowerCase().includes(selectedMonth.toLowerCase());
+				// Hier kijkt of een datum hetzelfde is als wat in de months staat zodat hij dit kan filteren
 			});
 		} else {
 			filteredWorkshops = data.workshops; // Reset to all workshops if no month selected
@@ -36,6 +37,8 @@
 <!-- <NavDark /> -->
 
 <main>
+
+	<!-- bovenste gedeelde intro -->
 	<div class="top_info">
 		<h1>Workshops</h1>
 		<p>
@@ -48,18 +51,8 @@
 			je horizon kunnen verbreden.
 	</div>
 
-	<!-- <form>
-		<label for="month">selecteer maand:</label>
-		<select id="month">
-			<option value="">alles</option>
-			{#each months as month}
-				<option value={month}>{month}</option>
-			{/each}
-		</select>
-		<button type="submit">Selecteer</button>
-	</form> -->
-
 	<div class="wrapper">
+		<!-- de form waarmee je op maand kan selecteren -->
 		<form on:submit|preventDefault={filterWorkshops}>
 			<label for="month">Selecteer maand:</label>
 			<select id="month" bind:value={selectedMonth} on:change={filterWorkshops}>
@@ -186,8 +179,7 @@
 		}
 	}
 
-
-
+/* media query tablet */
 	@media (min-width: 768px) and (max-width: 1023px) {
 
 		.wrapper {
@@ -214,9 +206,11 @@
 			border-radius: var(--border-radius);
 			padding: 1rem;
 			width: 40%;
+			height: 40vh;
 		}
 	}
 
+	/* media query desktop */
 	@media (min-width: 1024px) {
 		.wrapper {
 			display: flex;
@@ -258,6 +252,7 @@
 			border-radius: var(--border-radius);
 			padding: 1rem;
 			width: 25%;
+			height: 40vh;
 		}
 	}
 </style>
