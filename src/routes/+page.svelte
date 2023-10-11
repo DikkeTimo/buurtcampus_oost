@@ -1,6 +1,6 @@
 <script>
     import {onMount} from 'svelte';
-    import Header from "$lib/components/Header.svelte"
+    import Header from "$lib/components/HeaderDef.svelte"
     import NavDark from '../lib/components/NavDark.svelte';
 	import Footer from '../lib/components/footer.svelte';
 
@@ -47,9 +47,9 @@
 <Header />
 
 
-<!-- <NavDark/>
+<!-- <NavDark/> -->
 
- <NavDark /> -->
+ <!-- <NavDark /> -->
 
 <!-- CAROUSEL -->
 <section class="carousel">
