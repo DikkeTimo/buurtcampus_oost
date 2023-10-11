@@ -3,9 +3,9 @@
 	import MobileMenu from '../../lib/components/MobileMenu.svelte';
 	import Footer from '../../lib/components/footer.svelte';
 
-	import Location from '../src/assets/location.svg'
-	import Money from '../src/assets/money.svg'
-	import Date from '../src/assets/date.svg'
+	import Location from '../../src/assets/location.svg'
+	import Money from '../../src/assets/money.svg'
+	import Date from '../../src/assets/date.svg'
 
 	export let data;
 
