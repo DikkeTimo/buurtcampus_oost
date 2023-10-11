@@ -2,6 +2,11 @@
 	import NavDark from '$lib/components/NavDark.svelte';
 	import MobileMenu from '../../lib/components/MobileMenu.svelte';
 	import Footer from '../../lib/components/footer.svelte';
+
+	import Location from '../src/assets/location.svg'
+	import Money from '../src/assets/money.svg'
+	import Date from '../src/assets/date.svg'
+
 	export let data;
 
 	let selectedMonth = '';
@@ -91,15 +96,15 @@
 					<div class="info_workshop">
 						<h3>{workshop.naam}</h3>
 						<p>
-							<img src="src/assets/location.svg" alt="" />
+							<img src={Location} alt="" />
 							{workshop.locatie}
 						</p>
 						<p>
-							<img src="src/assets/money.svg" alt="" />
+							<img src={Money} alt="" />
 							{workshop.kosten}
 						</p>
 						<p>
-							<img src="src/assets/date.svg" alt="" />
+							<img src={Date} alt="" />
 							{workshop.datum}
 						</p>
 					</div>
@@ -277,7 +282,7 @@
 		}
 
 		.card {
-			width: 25%;
+			width: 25vw;
 		}
 
 		.plant {
