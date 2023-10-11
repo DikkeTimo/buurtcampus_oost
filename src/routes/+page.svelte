@@ -7,8 +7,6 @@
 
     export let data;
 
-    console.log(data);
-
     let slidesContainer;
     let slideWidth;
     let currentSlide = 0;
