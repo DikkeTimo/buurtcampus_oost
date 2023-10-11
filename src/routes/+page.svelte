@@ -264,21 +264,23 @@
     /* MEDIA QUERY DESKTOP*/
     @media (min-width: 1024px) {
         h1 {
-            font-size: 2.5rem;
+            font-size: var(--title-size);
             padding-top: 1rem;
             padding-bottom: 0.5rem;
         }
 
         .image-text-1 p {
-            font-size: 1.5rem;
+            font-size: var(--sec-title-size);
+            padding-right: 0.5rem;
             padding-bottom: 1rem;
+            padding-left: 0.5rem;
             line-height: 2rem;
 
         }
 
         .image-text-1{
-            top: 31%;
-            left: 33%;
+            top: 35%;
+            left: 32%;
             width: 40rem;
         }
 
@@ -288,7 +290,7 @@
         }
 
         .slides-item {
-            width: 110%;
+            width: 130%;
             height: 40rem;
         }
     }
@@ -347,7 +349,7 @@
     /* MEDIA QUERY DESKTOP*/
     @media (min-width: 1024px) {
         h2 {
-            font-size: 60px;
+            font-size: var(--title-size);
         }
 
         .flex-titel-how-it-works {
@@ -357,12 +359,12 @@
 
         .flex-titel-how-it-works svg {
             width: 5rem;
-            margin-top: 1.5rem;
+            margin-top: 0.5rem;
         }
 
         .how-it-works p {
-            font-size: 30px;
-            line-height: 2.8rem;
+            font-size: var(--sec-title-size);
+            line-height: 2rem;
             margin-left: 16rem;
             max-width: 50rem;
         }
@@ -463,12 +465,12 @@
     /* MEDIA QUERY DESKTOP*/
     @media (min-width: 1024px) {
         h3 {
-            font-size: 60px;
+            font-size: var(--title-size);
         }
 
         .flex-titel-available-stekjes svg {
             width: 5rem;
-            margin-top: 1.5rem;
+            margin-top: 0.6rem;
         }
 
         .flex-titel-available-stekjes {
@@ -477,8 +479,8 @@
         }
 
         .available-stekjes p {
-            font-size: 30px;
-            line-height: 2.8rem;
+            font-size: var(--sec-title-size);
+            line-height: 2rem;
             margin-left: 16rem;
             max-width: 50rem;
         }
@@ -493,11 +495,11 @@
         }
 
         .flex-wrapper-recent-stekjes img {
-            width: 25rem;
+            width: 18rem;
         }
 
         .button-all-stekjes {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             width: 18rem;
             height: 3rem;
             margin-top: 3rem;
@@ -586,17 +588,17 @@
 
     /* MEDIA QUERY DESKTOP */
     @media (min-width: 1024px) {
+        h4 {
+            font-size: var(--title-size);
+        }
+
         .about-homepage {
             margin-bottom: 8rem;
         }
 
-        h4 {
-            font-size: 60px;
-        }
-
         .flex-title-about svg {
             width: 5rem;
-            margin-top: 1.5rem;
+            margin-top: 0.6rem;
         }
 
         .flex-title-about {
@@ -605,8 +607,8 @@
         }
 
         .about-homepage p {
-            font-size: 30px;
-            line-height: 2.8rem;
+            font-size: var(--sec-title-size);
+            line-height: 2rem;
             margin-left: 16rem;
             max-width: 50rem;
         }
