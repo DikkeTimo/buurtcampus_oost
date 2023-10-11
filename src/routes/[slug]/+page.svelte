@@ -5,17 +5,17 @@
 	console.log(data);
 </script>
 
-<Header/>
+<Header />
 
 <section>
 	<div class="container">
 		<div class="image">
 			<img src={data.stekje.fotos[0].url} alt="foto van {data.stekje.naam}" />
-		
-		<div class="title">
-			<h1>{data.stekje.naam}</h1>
+
+			<div class="title">
+				<h1>{data.stekje.naam}</h1>
+			</div>
 		</div>
-	</div>
 	</div>
 
 	<div class="content-container">
@@ -104,7 +104,6 @@
 
 <Footer />
 
-
 <!-- <details name="stekje-details">
 	<summary>Watergeven</summary>
 	asdfsadff
@@ -126,6 +125,7 @@
 
 	.title {
 		position: absolute;
+		font-size: large;
 		text-align: center;
 		width: 100%;
 		bottom: 0;
@@ -138,7 +138,7 @@
 		color: white;
 		margin: 0;
 	}
-	
+
 	/* .container {
 		position: relative;
 		width: 100%; 
@@ -208,11 +208,6 @@
 		text-transform: uppercase;
 	}
 
-	.beschrijving h2 {
-		color: var(--color-primair);
-		/* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); */
-	}
-
 	/* Standaard stijlen die gelden voor alle apparaten */
 	.container,
 	.title {
@@ -232,7 +227,6 @@
 
 	@media screen and (min-width: 525px) {
 		/* belangrijke code */
-
 		.container,
 		.title {
 			display: none;
@@ -245,11 +239,6 @@
 
 		.image-container {
 			display: block;
-		}
-
-		.image-container img {
-			width: 200px;
-			height: auto;
 		}
 
 		/* met deze code maak ik de image Naast de beschrijving text */
@@ -277,6 +266,7 @@
 		}
 
 		.title2 {
+			font-size: large;
 			padding: 10px;
 			text-align: center;
 			width: 100%;

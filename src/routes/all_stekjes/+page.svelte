@@ -3,25 +3,21 @@
 	import { onMount } from 'svelte';
 	import Footer from '../../lib/components/footer.svelte';
 	export let data;
-	console.log(data)
+	console.log(data);
 
+	// 	ik wil input makeelijk of moelijk
+	// 	gelijk aan div class name en return
+	// 	const currentInterceptorHygraph = dataHygraph.dashboard.river.filter(interceptor => {
 
-// 	ik wil input makeelijk of moelijk
-// 	gelijk aan div class name en return
-// 	const currentInterceptorHygraph = dataHygraph.dashboard.river.filter(interceptor => {
+	//     return interceptor.slug == url.searchParams.get('id')
 
-//     return interceptor.slug == url.searchParams.get('id')
+	//   })
 
-//   })
-
-	let selectedCategories = [];// Initialize selectedCategories as an empty array
+	let selectedCategories = []; // Initialize selectedCategories as an empty array
 
 	// Event handler for checkbox change
 	function handleCheckboxChange(event) {
-		const category = [
-			'uitdagend',
-			'makkelijk'
-		];
+		const category = ['uitdagend', 'makkelijk'];
 
 		// Check if the category is already selected
 		if (selectedCategories.includes(category)) {
@@ -186,8 +182,8 @@
 		top: -10px;
 	}
 
-	@media (width > 45rem){
-		.intro_text img{
+	@media (width > 45rem) {
+		.intro_text img {
 			display: block;
 		}
 	}
