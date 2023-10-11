@@ -1,21 +1,24 @@
 <script>
+	import {onMount} from 'svelte';
 	import Header from '$lib/components/HeaderDef.svelte';
-	import { onMount } from 'svelte';
 	import Footer from '../../lib/components/footer.svelte';
 	export let data;
 	// console.log(data)
 
-let stekje = data.stekjes;
-const selectedCategories = ["Makkelijk", "Uitdagend"];
+	
+	let stekjes = data.stekjes;
+	const selectedCategories = ["Makkelijk", "Uitdagend"];
 
-// Event voor checkbox checkies
-function handleCheckboxChange() {
-  if (stekje) {
-    stekje = stekje.filter(stekje => selectedCategories.includes(stekje.categories.naam));
-  } else {
-//
-  }
-}
+	// Event handler voor checkbox-wijzigingen
+	function handleCheckboxChange() {
+		stekjes = data.stekjes.filter(stekje => selectedCategories.includes(stekje.categories[0].naam));
+	}
+
+	onMount(() => {
+		handleCheckboxChange();
+	});
+
+
  </script>
 
 <Header />
@@ -47,6 +50,7 @@ function handleCheckboxChange() {
 		<input type="checkbox" id="moeilijkheidsgraad" on:change={handleCheckboxChange} /> Uitdagend
 	</label>
 </section>
+
 
 <section class="wrapper">
 	<!-- hier komen de kaartjes -->
