@@ -205,7 +205,7 @@
     /* border: 1px solid var(--color-secundair); */
   }
 
-  svg {
+  .svg-button {
     transition: 0.3s;
     transform: translateY(5px) scale(0.8);
     stroke: var(--main-dark);

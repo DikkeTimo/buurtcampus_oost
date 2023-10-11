@@ -127,7 +127,19 @@
     <div>
         <a href="/stekje">
             <button class="button-all-stekjes">
-                Bekijk alle stekjes!
+                Bekijk alle stekjes!<svg class="svg-button"
+                    width="22"
+                    height="20"
+                    viewBox="0 0 22 20"
+                    fill=""
+                    xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                        d="M0 10.2317H20M20 10.2317L11.3333 0.99997M20 10.2317L11.3333 19"
+                        stroke=""
+                        stroke-width="1.5"
+                />
+            </svg>
             </button>
         </a>
     </div>
@@ -150,12 +162,6 @@
         planten moeten zorgen en kopen nieuwe als ze dood gaan. In het kader van duurzaamheid, gezondheid en meer
         sociale connectie, is PlantSwap Amsterdam een plek van sociale ontmoeting, waar mensen samen leren over
         planten.</p>
-
-    <!--    <div>-->
-    <!--        <a href="/contact"> <button class="button-more-about">-->
-    <!--            Meer over PlantSwap!-->
-    <!--        </button></a>-->
-    <!--    </div>-->
 
     <div class="image-about">
         <img src="src/assets/netwerk.png">
@@ -186,8 +192,9 @@
         position: absolute;
         z-index: 1;
         border-radius: 5px;
-        top: 25%;
-        left: 2.5%;
+        inset: 0;
+        margin: auto;
+        height: 16rem;
         background-color: rgba(255, 255, 255, 0.5);
         width: 22rem;
     }
@@ -243,13 +250,11 @@
             font-size: 1.5rem;
             padding-bottom: 1rem;
             line-height: 2rem;
-
         }
 
         .image-text-1{
-            top: 21%;
-            left: 10%;
-            width: 40rem;
+            top: -30%;
+            width: 45rem;
         }
 
         .slides img {
@@ -279,22 +284,10 @@
         }
 
         .image-text-1{
-            /*top: 35%;*/
-            /*left: 32%;*/
-            /*width: 40rem;*/
             inset: 0;
             margin: auto;
             height: 16rem;
             width: 40rem;
-
-            /*left: 0;*/
-            /*right: 0;*/
-            /*margin-left: auto;*/
-            /*margin-right: auto;*/
-            /*margin-bottom: auto;*/
-            /*top: 0;*/
-            /*bottom: 0;*/
-
         }
 
         .slides img {
@@ -384,7 +377,6 @@
     }
 
     /* ------------ SECTION AVAILABLE STEKJES ------------*/
-
     h3 {
         font-size: 30px;
     }
@@ -396,6 +388,7 @@
         margin-top: 8rem;
         margin-bottom: 1rem;
         margin-left: 1.5rem;
+        padding-top: 3rem;
     }
 
     .flex-titel-available-stekjes svg {
@@ -428,15 +421,37 @@
     }
 
     .button-all-stekjes {
-        background-color: var(--accent-color-sec);
+        border: none;
+        padding: 0.2em 1em 0.5em;
+        background-color: var(--color-secundair);
+        /* border: 1px solid var(--color-primair); */
+        color: var(--main-dark);
+        border-radius: 2em;
+        font-size: 1em;
+        cursor: pointer;
+        transition: 0.3s;
+        width: max-content;
+        margin: 3em 3.5em 0;
+        margin-bottom: 0;
+    }
+
+    .button-all-stekjes:hover {
+        background-color: var(--color-primair);
         color: white;
-        font-size: 1rem;
-        border-radius: 23px;
-        border: solid 0;
-        width: 11rem;
-        height: 1.8rem;
-        margin-top: 1.5rem;
-        margin-left: 3.5rem;
+        stroke: var(--main-dark);
+        /* border: 1px solid var(--color-secundair); */
+    }
+
+    .svg-button {
+        transition: 0.3s;
+        transform: translateY(5px) scale(0.8);
+        stroke: var(--main-dark);
+    }
+
+    .button-all-stekjes:hover .svg-button {
+        transform: translateX(5px) translateY(5px) scale(0.8);
+        /* fill: var(--main-offwhite); */
+        stroke: white;
     }
 
     /* MEDIA QUERY TABLET */
@@ -467,11 +482,7 @@
         }
 
         .button-all-stekjes {
-            font-size: 1.5rem;
-            width: 15rem;
-            height: 2.7rem;
-            margin-top: 2rem;
-            margin-left: 5.5rem;
+            font-size: 1.5em;
         }
     }
 
@@ -479,6 +490,11 @@
     @media (min-width: 1024px) {
         h3 {
             font-size: var(--title-size);
+        }
+
+        .available-stekjes {
+            background-color: #f0f0f0;
+            height: 48rem;
         }
 
         .flex-titel-available-stekjes svg {
@@ -512,10 +528,7 @@
         }
 
         .button-all-stekjes {
-            font-size: 1.6rem;
-            width: 18rem;
-            height: 3rem;
-            margin-top: 3rem;
+            font-size: 1em;
             margin-left: 15.5rem;
         }
     }
@@ -563,18 +576,6 @@
         padding-top: 2rem;
     }
 
-    /*.button-more-about {*/
-    /*    background-color: var(--accent-color-sec);*/
-    /*    color: white;*/
-    /*    font-size: 1rem;*/
-    /*    border-radius: 23px;*/
-    /*    border: solid 0;*/
-    /*    width: 12rem;*/
-    /*    height: 2rem;*/
-    /*    margin-top: 1.5rem;*/
-    /*    margin-left: 3.5rem;*/
-    /*}*/
-
     /* MEDIA QUERY TABLET */
     @media (min-width: 768px) and (max-width: 1023px) {
         h4 {
@@ -606,7 +607,7 @@
         }
 
         .about-homepage {
-            margin-bottom: 8rem;
+            margin-bottom: 10rem;
         }
 
         .flex-title-about svg {
@@ -615,7 +616,7 @@
         }
 
         .flex-title-about {
-            margin-top: 20rem;
+            margin-top: 10rem;
             margin-left: 10rem;
         }
 
