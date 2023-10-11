@@ -3,12 +3,25 @@
 	import { onMount } from 'svelte';
 	import Footer from '../../lib/components/footer.svelte';
 	export let data;
-	// console.log(data)
-	let selectedCategories = []; // Initialize selectedCategories as an empty array
+	console.log(data)
+
+
+// 	ik wil input makeelijk of moelijk
+// 	gelijk aan div class name en return
+// 	const currentInterceptorHygraph = dataHygraph.dashboard.river.filter(interceptor => {
+
+//     return interceptor.slug == url.searchParams.get('id')
+
+//   })
+
+	let selectedCategories = [];// Initialize selectedCategories as an empty array
 
 	// Event handler for checkbox change
 	function handleCheckboxChange(event) {
-		const category = event.target.id;
+		const category = [
+			'uitdagend',
+			'makkelijk'
+		];
 
 		// Check if the category is already selected
 		if (selectedCategories.includes(category)) {
@@ -95,10 +108,12 @@
 	}
 
 	.intro_text img {
+		position: relative;
 		display: none;
-		width: 240px;
-		height: 210px;
-		margin-left: 4rem;
+		width: 280px;
+		height: 250px;
+		margin-left: 15%;
+		top: -3rem;
 	}
 
 	.filter {
@@ -169,5 +184,11 @@
 
 	article:hover {
 		top: -10px;
+	}
+
+	@media (width > 45rem){
+		.intro_text img{
+			display: block;
+		}
 	}
 </style>
