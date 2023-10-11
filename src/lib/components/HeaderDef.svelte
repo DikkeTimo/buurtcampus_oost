@@ -6,6 +6,7 @@
 	</div>
 
 	<ul id="links">
+		<a href="/">Home</a>
 		<a href="/all_stekjes">Stekjes</a>
 		<a href="/workshops">Workshops</a>
 		<a href="/contact">Contact</a>
@@ -36,7 +37,7 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		height: 10vh;
+		height: 15vh;
 		-webkit-box-shadow: 0px 1px 5px 0px rgba(66, 68, 90, 1);
 		-moz-box-shadow: 0px 1px 5px 0px rgba(66, 68, 90, 1);
 		box-shadow: 0px 1px -1px 0px rgb(66, 68, 90);
@@ -44,15 +45,21 @@
 	}
 
 	.logo {
+		display: flex;
+		align-items: center;
 		padding: 1rem;
 		height: 100%;
 		width: 30%;
 	}
 
+	.logo img {
+		height: 50px;
+	}
+
 	#links {
 		display: flex;
 		justify-content: space-between;
-		width: 18rem;
+		width: 25rem;
 	}
 
 	#links a {
