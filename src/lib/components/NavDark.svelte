@@ -2,7 +2,7 @@
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import { onMount } from 'svelte';
-	import Header from '$lib/components/HeaderDef.svelte';
+	import HeaderDef from './HeaderDef.svelte';
 
 	gsap.registerPlugin(ScrollTrigger);
 
@@ -79,7 +79,7 @@
 					<a class="menu-item" href="/"> Home </a>
 				</li>
 				<li>
-					<a class="menu-item" href="/stekjes"> Stekjes </a>
+					<a class="menu-item" href="/all_stekjes"> Stekjes </a>
 				</li>
 				<li>
 					<a class="menu-item" href="/workshops"> Workshops </a>
@@ -92,18 +92,19 @@
 	</div>
 	<!-- <div class="line"></div> -->
 
-	<!-- <Header /> -->
+	<div class="mobile-none">
+	<!-- <HeaderDef /> -->
+</div>
 </header>
 
 <style>
 	.header-wrapper {
-		position: relative;
+		position: fixed;
 		top: 0;
 		left: 0;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
-		height: 6em;
 		width: 100%;
 		padding-right: 2em;
 		padding-left: 1em;
@@ -156,6 +157,10 @@
 		width: 20rem;
 	}
 
+	.mobile-none {
+		display: none;
+	}
+
 	@media screen and (max-width: 1122px) {
 		.menu-item {
 			font-size: 0.7em;
@@ -188,5 +193,8 @@
 		ul {
 			display: none;
 		}
+		.mobile-none {
+		display: block;
+	}
 	}
 </style>

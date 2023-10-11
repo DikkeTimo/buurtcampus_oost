@@ -1,6 +1,6 @@
 <script>
-	import Header from '$lib/components/HeaderDef.svelte';
 	import NavDark from '$lib/components/NavDark.svelte';
+	import MobileMenu from '../../lib/components/MobileMenu.svelte';
 	import Footer from '../../lib/components/footer.svelte';
 	export let data;
 
@@ -32,11 +32,10 @@
 	}
 </script>
 
-<Header />
-<!-- <NavDark /> -->
+<NavDark />
+<MobileMenu />
 
-<main>
-	<!-- bovenste gedeelde intro -->
+	<section>	<!-- bovenste gedeelde intro -->
 	<div class="top_info">
 		<h1>Workshops</h1>
 
@@ -99,9 +98,13 @@
 	</div>
 
 	<Footer />
-</main>
+</section>
 
 <style>
+	section {
+		padding-top: 6rem;
+	}
+
 	:root {
 		--margin: 2rem;
 		--padding: 0.5rem;
