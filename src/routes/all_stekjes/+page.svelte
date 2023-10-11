@@ -7,11 +7,16 @@
 	
 	let stekjes = data.stekjes;
 	const selectedCategories = ["Makkelijk", "Uitdagend"];
-
+// kijk hoe je met de id inside kan meegeven aan de event die ervoor zorgt ..
 	// Event handler voor checkbox-wijzigingen
-	function handleCheckboxChange() {
-		stekjes = data.stekjes.filter(stekje => selectedCategories.includes(stekje.categories[0].naam));
+	function handleCheckboxChange(event) {
+		let uitdagend = 'Uitdagend'
+		stekjes = data.stekjes.filter(stekje => {
+			return stekje.categories[0].naam === uitdagend
+		});
+		console.log(stekjes)
 	}
+	
 
 
 
@@ -37,13 +42,15 @@
 	<img src="src/assets/vetplantjes.png" alt="verschillende potjes met stekjes" />
 </section>
 
+
+
 <section class="filter">
 	<label>
-		<input type="checkbox" id="makkelijkheidsgraad" on:change={handleCheckboxChange} /> Makkelijk
+		<input type="checkbox" id="makkelijk" on:change={handleCheckboxChange} /> Makkelijk
 	</label>
 
 	<label>
-		<input type="checkbox" id="moeilijkheidsgraad" on:change={handleCheckboxChange} /> Uitdagend
+		<input type="checkbox" id="uitdagend" on:change={handleCheckboxChange} /> Uitdagend
 	</label>
 </section>
 
