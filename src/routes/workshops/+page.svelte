@@ -89,10 +89,11 @@
 		<div class="container_workshop_cards">
 			{#each filteredWorkshops as workshop}
 				<div class="card">
-					<div class="plant">
-						<img src={workshop.foto[0].url} alt="foto van een stekje" width="100" />
+					<div class="clippy">
+						<div class="plant">
+							<img class="image-clip" src={workshop.foto[0].url} alt="foto van een stekje" width="100" />
+						</div>
 					</div>
-
 					<div class="info_workshop">
 						<h3>{workshop.naam}</h3>
 						<p>
@@ -181,14 +182,14 @@
 
 	.container_workshop_cards {
 		margin-bottom: var(--margin);
+		padding: 1em;
 	}
 
 	.card {
 		border-radius: var(--border-radius);
 		background-color: var(--background-color);
-		margin: var(--margin);
 		max-width: 100%;
-		box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+		box-shadow: rgba(149, 157, 165, 0.1) 0px 8px 24px;
 	}
 
 	.plant {
@@ -263,7 +264,9 @@
 		.container_workshop_cards {
 			display: flex;
 			flex-wrap: wrap;
-			justify-content: space-between;
+			justify-content: flex-start;
+			width: 100%;
+			gap: 1em;
 		}
 
 		.wrapper_info {
@@ -282,12 +285,21 @@
 		}
 
 		.card {
-			width: 25vw;
+			height: max-content;
+			width: 32.5%;
+			margin-bottom: 1em;
+			cursor: pointer;
+		}
+
+		.card:hover .plant {
+			transform: scale(1.04);
 		}
 
 		.plant {
-			height: 350px;
+			height: 39vh;
+			transition: 0.3s;
 		}
+
 
 		form {
 			border-radius: var(--border-radius);

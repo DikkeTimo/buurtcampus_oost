@@ -117,7 +117,7 @@
           >
         </li>
         <li>
-          <a class="menu-text-gsap" href="/all_stekjes">Stekjes</a>
+          <a class="menu-text-gsap" href="/all_stekjes  ">Stekjes</a>
         </li>
         <li>
           <a class="menu-text-gsap" href="/workshops">Workshops</a>
@@ -143,7 +143,7 @@
     flex-direction: column;
     background-color: var(--color-primair);
     padding: 1.1em;
-    z-index: 100;
+    z-index: 1000;
     overflow: hidden;
     opacity: 1;
     transform: translateY(-3em);
@@ -152,7 +152,7 @@
   .menu-button {
     position: fixed;
     display: none;
-    top: 1em;
+    top: 1.5em;
     right: 1em;
     background-color: #ffffff00;
     border: 0;
@@ -160,13 +160,13 @@
     transition: transform 0.2s;
     padding: 1em;
     transform: scale(1.2);
-    stroke: var(--main-offwhite);
+    stroke: var(--main-dark);
   }
 
   .close-button {
     stroke: var(--main-offwhite);
     position: fixed;
-    top: 1em;
+    top: 1.5em;
     right: 1em;
     opacity: 1;
     z-index: 2000;
