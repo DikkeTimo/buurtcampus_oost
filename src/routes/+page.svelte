@@ -279,9 +279,22 @@
         }
 
         .image-text-1{
-            top: 35%;
-            left: 32%;
+            /*top: 35%;*/
+            /*left: 32%;*/
+            /*width: 40rem;*/
+            inset: 0;
+            margin: auto;
+            height: 16rem;
             width: 40rem;
+
+            /*left: 0;*/
+            /*right: 0;*/
+            /*margin-left: auto;*/
+            /*margin-right: auto;*/
+            /*margin-bottom: auto;*/
+            /*top: 0;*/
+            /*bottom: 0;*/
+
         }
 
         .slides img {
