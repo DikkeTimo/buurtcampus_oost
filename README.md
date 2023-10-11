@@ -1,5 +1,6 @@
 # Plantswap 
 <!-- Geef je project een titel en schrijf in één zin wat het is -->
+! [plantswap-mockup](https://github.com/TimOosterveer/buurtcampus_oost/assets/112857270/fea5e62a-c244-4032-b216-978f24b6622a)
 
 ## Inhoudsopgave
 
