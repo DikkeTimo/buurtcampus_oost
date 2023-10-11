@@ -1,5 +1,5 @@
 <script>
-	import Header from '$lib/components/Header.svelte';
+	import Header from '$lib/components/HeaderDef.svelte';
 	import NavDark from '$lib/components/NavDark.svelte';
 	import Footer from '../../lib/components/footer.svelte';
 	export let data;
@@ -19,7 +19,7 @@
 		'november',
 		'december'
 	];
-	let filteredWorkshops = data.workshops; // Initialize with all workshops
+	let filteredWorkshops = data.workshops; // Data van de workshops in filteredWorkshops
 
 	function filterWorkshops() {
 		if (selectedMonth) {
@@ -27,7 +27,7 @@
 				return workshop.datum.toLowerCase().includes(selectedMonth.toLowerCase());
 			});
 		} else {
-			filteredWorkshops = data.workshops; // Reset to all workshops if no month selected
+			filteredWorkshops = data.workshops;
 		}
 	}
 </script>
@@ -36,6 +36,7 @@
 <!-- <NavDark /> -->
 
 <main>
+	<!-- bovenste gedeelde intro -->
 	<div class="top_info">
 		<h1>Workshops</h1>
 		<p>
@@ -43,23 +44,15 @@
 			vaardigheden kunnen verwerven, nieuwe kennis kunnen opdoen en vaak ook nieuwe mensen kunnen
 			ontmoeten. Het idee achter jouw website om een overzicht te bieden van beschikbare workshops
 			is geweldig, omdat het mensen kan helpen om gemakkelijk toegang te krijgen tot deze
-			waardevolle leermogelijkheden. Ontdek en Leer met Onze Workshopgids Welkom bij Plantswap, dé plek om
-			workshops te ontdekken die jouw vaardigheden kunnen verbeteren, je passies kunnen verdiepen en
-			je horizon kunnen verbreden.
+			waardevolle leermogelijkheden. Ontdek en Leer met Onze Workshopgids Welkom bij Plantswap, dé
+			plek om workshops te ontdekken die jouw vaardigheden kunnen verbeteren, je passies kunnen
+			verdiepen en je horizon kunnen verbreden.
+		</p>
 	</div>
 
-	<!-- <form>
-		<label for="month">selecteer maand:</label>
-		<select id="month">
-			<option value="">alles</option>
-			{#each months as month}
-				<option value={month}>{month}</option>
-			{/each}
-		</select>
-		<button type="submit">Selecteer</button>
-	</form> -->
-
+	<!-- de form waarmee je op maand kan selecteren -->
 	<div class="wrapper">
+		
 		<form on:submit|preventDefault={filterWorkshops}>
 			<label for="month">Selecteer maand:</label>
 			<select id="month" bind:value={selectedMonth} on:change={filterWorkshops}>
@@ -96,7 +89,6 @@
 			{/each}
 		</div>
 	</div>
-
 
 	<Footer />
 </main>
@@ -186,10 +178,8 @@
 		}
 	}
 
-
-
+	/* media query tablet */
 	@media (min-width: 768px) and (max-width: 1023px) {
-
 		.wrapper {
 			display: flex;
 		}
@@ -214,9 +204,11 @@
 			border-radius: var(--border-radius);
 			padding: 1rem;
 			width: 40%;
+			height: 40vh;
 		}
 	}
 
+	/* media query desktop */
 	@media (min-width: 1024px) {
 		.wrapper {
 			display: flex;
@@ -258,6 +250,7 @@
 			border-radius: var(--border-radius);
 			padding: 1rem;
 			width: 25%;
+			height: 40vh;
 		}
 	}
 </style>

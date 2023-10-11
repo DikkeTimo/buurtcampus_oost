@@ -1,5 +1,5 @@
 <script>
-	import Header from '$lib/components/header.svelte';
+	import Header from '$lib/components/HeaderDef.svelte';
 	import Footer from '../../lib/components/footer.svelte';
 	export let data;
 	console.log(data);
