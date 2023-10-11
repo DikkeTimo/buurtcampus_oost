@@ -11,10 +11,11 @@
 	<div class="container">
 		<div class="image">
 			<img src={data.stekje.fotos[0].url} alt="foto van {data.stekje.naam}" />
-		</div>
+		
 		<div class="title">
 			<h1>{data.stekje.naam}</h1>
 		</div>
+	</div>
 	</div>
 
 	<div class="content-container">
@@ -125,6 +126,8 @@
 
 	.title {
 		position: absolute;
+		text-align: center;
+		width: 100%;
 		bottom: 0;
 		left: 0;
 		background-color: rgba(0, 0, 0, 0.5); /* Background color for better readability */
@@ -145,15 +148,6 @@
 		text-align: left;
 		color: white;
 	} */
-
-	.title {
-		position: absolute;
-		left: 0;
-		width: 100%;
-		bottom: 0;
-		background-color: rgba(0, 0, 0, 0.3);
-		padding: 20px;
-	}
 
 	.accordion {
 		width: 100%;
