@@ -3,36 +3,20 @@
 	import { onMount } from 'svelte';
 	import Footer from '../../lib/components/footer.svelte';
 	export let data;
-	console.log(data)
+	// console.log(data)
 
+let stekje = data.stekjes;
+const selectedCategories = ["Makkelijk", "Uitdagend"];
 
-// 	ik wil input makeelijk of moelijk
-// 	gelijk aan div class name en return
-// 	const currentInterceptorHygraph = dataHygraph.dashboard.river.filter(interceptor => {
-
-//     return interceptor.slug == url.searchParams.get('id')
-
-//   })
-
-	let selectedCategories = [];// Initialize selectedCategories as an empty array
-
-	// Event handler for checkbox change
-	function handleCheckboxChange(event) {
-		const category = [
-			'uitdagend',
-			'makkelijk'
-		];
-
-		// Check if the category is already selected
-		if (selectedCategories.includes(category)) {
-			// If selected, remove it
-			selectedCategories = selectedCategories.filter((item) => item !== category);
-		} else {
-			// If not selected, add it
-			selectedCategories = [...selectedCategories, category];
-		}
-	}
-</script>
+// Event voor checkbox checkies
+function handleCheckboxChange() {
+  if (stekje) {
+    stekje = stekje.filter(stekje => selectedCategories.includes(stekje.categories.naam));
+  } else {
+//
+  }
+}
+ </script>
 
 <Header />
 
@@ -67,7 +51,6 @@
 <section class="wrapper">
 	<!-- hier komen de kaartjes -->
 	{#each data.stekjes as stekje}
-		{#if selectedCategories.length === 0 || selectedCategories.includes(stekje.categories[0].naam)}
 			<a href={stekje.slug}>
 				<article class={stekje.categories[0].naam}>
 					<img src={stekje.fotos[0].url} alt="foto van {stekje.naam}" />
@@ -77,7 +60,6 @@
 					</div>
 				</article>
 			</a>
-		{/if}
 	{/each}
 </section>
 
@@ -171,7 +153,7 @@
 
 	article div h3 {
 		padding: 0.5rem;
-		font-size: 20px;
+		font-size: 17px;
 	}
 
 	article div span img {
