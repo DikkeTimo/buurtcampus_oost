@@ -79,7 +79,7 @@
 					<a class="menu-item" href="/"> Home </a>
 				</li>
 				<li>
-					<a class="menu-item" href="/stekjes"> Stekjes </a>
+					<a class="menu-item" href="/all_stekjes"> Stekjes </a>
 				</li>
 				<li>
 					<a class="menu-item" href="/workshops"> Workshops </a>

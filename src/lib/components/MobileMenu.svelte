@@ -117,7 +117,7 @@
           >
         </li>
         <li>
-          <a class="menu-text-gsap" href="/stekjes">Stekjes</a>
+          <a class="menu-text-gsap" href="/all_stekjes">Stekjes</a>
         </li>
         <li>
           <a class="menu-text-gsap" href="/workshops">Workshops</a>
