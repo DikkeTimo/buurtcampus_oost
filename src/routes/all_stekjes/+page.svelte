@@ -2,6 +2,8 @@
 	import NavDark from '$lib/components/NavDark.svelte';
 	import MobileMenu from '../../lib/components/MobileMenu.svelte';
 	import Footer from '../../lib/components/footer.svelte';
+
+	import Stekjes from '$lib/assets/vetplantjes.png'
 	export let data;
 	// console.log(data)
 
@@ -41,7 +43,7 @@
 		Heb jij een of meerdere plantenstekjes over en zou je die graag willen ruilen voor een nieuwe
 		plantje? Bekijk hieronder ons aanbod.
 	</p>
-	<img src="src/assets/vetplantjes.png" alt="verschillende potjes met stekjes" />
+	<img src={Stekjes} alt="verschillende potjes met stekjes" />
 </section>
 
 
