@@ -3,6 +3,7 @@
     import Header from "$lib/components/HeaderDef.svelte"
     import NavDark from '../lib/components/NavDark.svelte';
     import Footer from '../lib/components/footer.svelte';
+	import MobileMenu from '../lib/components/MobileMenu.svelte';
 
     export let data;
 
@@ -44,13 +45,8 @@
 
 </script>
 
-<Header/>
-
-
-<!-- <NavDark/> -->
-
-<!-- <NavDark /> -->
-
+<NavDark />
+<MobileMenu />
 <!-- CAROUSEL -->
 <section class="carousel">
     <div class="image-text-1"><h1>Swap nu je stek!</h1>
