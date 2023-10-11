@@ -2,7 +2,7 @@
     import {onMount} from 'svelte';
     import Header from "$lib/components/HeaderDef.svelte"
     import NavDark from '../lib/components/NavDark.svelte';
-	import Footer from '../lib/components/footer.svelte';
+    import Footer from '../lib/components/footer.svelte';
 
     export let data;
 
@@ -44,22 +44,26 @@
 
 </script>
 
-<Header />
+<Header/>
 
 
 <!-- <NavDark/> -->
 
- <!-- <NavDark /> -->
+<!-- <NavDark /> -->
 
 <!-- CAROUSEL -->
 <section class="carousel">
-
+    <div class="image-text-1"><h1>Swap nu je stek!</h1>
+        <p>Heb jij een of meerdere plantenstekjes over en zou je die graag willen ruilen voor een nieuw plantje? Meld je
+            stekje hier aan en ruil ‘m via de app. Schrijf de Latijnse naam van je plant en eventuele verzorgingstips op
+            een labeltje en neem ‘m mee naar de OBA Linnaeusstraat in Amsterdam.</p>
+    </div>
     <div class="slides">
 
         <div class="slides-item slide-1" id="slide-1">
             <div class="image-container">
                 <img src={data.headers[0].imagesCarousel.url} alt="foto van een stekje"/>
-                <div class="image-text-1">Welkom bij PlantSwap</div>
+                <!--                <div class="image-text-1">Welkom bij PlantSwap</div>-->
             </div>
         </div>
 
@@ -68,7 +72,7 @@
 
             <div class="image-container-2">
                 <img src={data.headers[1].imagesCarousel.url} alt="foto van een stekje"/>
-                <div class="image-text-2">Welkom bij PlantSwap</div>
+                <!--                <div class="image-text-2">Welkom bij PlantSwap</div>-->
             </div>
         </div>
 
@@ -76,7 +80,7 @@
         <div class="slides-item slide-3" id="slide-3">
             <div class="image-container-3">
                 <img src={data.headers[2].imagesCarousel.url} alt="foto van een stekje"/></div>
-            <div class="image-text-3">Welkom bij PlantSwap</div>
+            <!--            <div class="image-text-3">Welkom bij PlantSwap</div>-->
         </div>
     </div>
 
@@ -120,14 +124,13 @@
         </div>
     </div>
 
-    <div class="button-stekjes">
+    <div>
         <a href="/stekje">
-            <button class="button-stek">
-                <p>Bekijk alle stekjes!</p>
+            <button class="button-all-stekjes">
+                Bekijk alle stekjes!
             </button>
         </a>
     </div>
-
 
 </section>
 
@@ -148,12 +151,18 @@
         sociale connectie, is PlantSwap Amsterdam een plek van sociale ontmoeting, waar mensen samen leren over
         planten.</p>
 
+    <!--    <div>-->
+    <!--        <a href="/contact"> <button class="button-more-about">-->
+    <!--            Meer over PlantSwap!-->
+    <!--        </button></a>-->
+    <!--    </div>-->
+
     <div class="image-about">
         <img src="src/assets/netwerk.png">
     </div>
 </section>
 
-<Footer />
+<Footer/>
 
 
 <!-------------CSS------------->
@@ -161,12 +170,24 @@
 
     /* ------------ CAROUSEL ------------*/
 
-    .image-text-1, .image-text-2, .image-text-3 {
+    h1 {
+        font-size: 2.3rem;
+        padding-top: 1rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .image-text-1 p {
+        padding-bottom: 1rem;
+        line-height: 1.5rem;
+
+    }
+
+    .image-text-1 {
         position: absolute;
+        z-index: 1;
         border-radius: 5px;
-        font-size: 3.0rem;
-        top: 30%;
-        left: 2.4%;
+        top: 25%;
+        left: 2.5%;
         background-color: rgba(255, 255, 255, 0.5);
         width: 22rem;
     }
@@ -212,10 +233,23 @@
 
     /* MEDIA QUERY TABLET*/
     @media (min-width: 768px) and (max-width: 1023px) {
-        .image-text-1, .image-text-2, .image-text-3 {
-            font-size: 4rem;
-            left: 20%;
-            width: 30rem;
+        h1 {
+            font-size: 2.5rem;
+            padding-top: 1rem;
+            padding-bottom: 0.5rem;
+        }
+
+        .image-text-1 p {
+            font-size: 1.5rem;
+            padding-bottom: 1rem;
+            line-height: 2rem;
+
+        }
+
+        .image-text-1{
+            top: 21%;
+            left: 10%;
+            width: 40rem;
         }
 
         .slides img {
@@ -229,9 +263,22 @@
 
     /* MEDIA QUERY DESKTOP*/
     @media (min-width: 1024px) {
-        .image-text-1, .image-text-2, .image-text-3 {
-            font-size: 6rem;
-            left: 30%;
+        h1 {
+            font-size: 2.5rem;
+            padding-top: 1rem;
+            padding-bottom: 0.5rem;
+        }
+
+        .image-text-1 p {
+            font-size: 1.5rem;
+            padding-bottom: 1rem;
+            line-height: 2rem;
+
+        }
+
+        .image-text-1{
+            top: 31%;
+            left: 33%;
             width: 40rem;
         }
 
@@ -365,23 +412,16 @@
         border-radius: 5px;
     }
 
-    .button-stekjes {
-        text-align: left;
-    }
-
-    .button-stek {
+    .button-all-stekjes {
         background-color: var(--accent-color-sec);
-        height: 2rem;
-        border-radius: 5px;
-        border: none;
-        margin-top: 2rem;
-        margin-left: 3.5rem;
         color: white;
-        text-align: left;
-    }
-
-    .button-stek p {
-        text-align: left;
+        font-size: 1rem;
+        border-radius: 23px;
+        border: solid 0;
+        width: 11rem;
+        height: 1.8rem;
+        margin-top: 1.5rem;
+        margin-left: 3.5rem;
     }
 
     /* MEDIA QUERY TABLET */
@@ -409,6 +449,14 @@
 
         .flex-wrapper-recent-stekjes img {
             width: 25rem;
+        }
+
+        .button-all-stekjes {
+            font-size: 1.5rem;
+            width: 15rem;
+            height: 2.7rem;
+            margin-top: 2rem;
+            margin-left: 5.5rem;
         }
     }
 
@@ -447,10 +495,22 @@
         .flex-wrapper-recent-stekjes img {
             width: 25rem;
         }
+
+        .button-all-stekjes {
+            font-size: 1.8rem;
+            width: 18rem;
+            height: 3rem;
+            margin-top: 3rem;
+            margin-left: 15.5rem;
+        }
     }
 
 
     /* ------------ SECTION ABOUT BUURTCAMPUS OOST ------------*/
+    .about-homepage {
+        margin-bottom: 4rem;
+    }
+
     h4 {
         font-size: 30px;
     }
@@ -488,6 +548,18 @@
         padding-top: 2rem;
     }
 
+    /*.button-more-about {*/
+    /*    background-color: var(--accent-color-sec);*/
+    /*    color: white;*/
+    /*    font-size: 1rem;*/
+    /*    border-radius: 23px;*/
+    /*    border: solid 0;*/
+    /*    width: 12rem;*/
+    /*    height: 2rem;*/
+    /*    margin-top: 1.5rem;*/
+    /*    margin-left: 3.5rem;*/
+    /*}*/
+
     /* MEDIA QUERY TABLET */
     @media (min-width: 768px) and (max-width: 1023px) {
         h4 {
@@ -514,6 +586,10 @@
 
     /* MEDIA QUERY DESKTOP */
     @media (min-width: 1024px) {
+        .about-homepage {
+            margin-bottom: 8rem;
+        }
+
         h4 {
             font-size: 60px;
         }
