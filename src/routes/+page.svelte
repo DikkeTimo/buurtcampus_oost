@@ -350,6 +350,7 @@
 
     /* MEDIA QUERY DESKTOP*/
     @media (min-width: 1024px) {
+
         h2 {
             font-size: var(--title-size);
         }
@@ -499,7 +500,7 @@
         }
 
         .flex-titel-available-stekjes {
-            margin-top: 20rem;
+            margin-top: 10rem;
             margin-left: 10rem;
         }
 
