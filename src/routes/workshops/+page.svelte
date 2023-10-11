@@ -263,7 +263,8 @@
 		.container_workshop_cards {
 			display: flex;
 			flex-wrap: wrap;
-			justify-content: space-between;
+			margin: var(--margin);
+			gap: var(--margin);
 		}
 
 		.wrapper_info {
@@ -282,7 +283,8 @@
 		}
 
 		.card {
-			width: 25vw;
+			width: 22vw;
+			margin: 0;
 		}
 
 		.plant {
