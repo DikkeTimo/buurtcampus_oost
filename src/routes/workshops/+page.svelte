@@ -35,41 +35,52 @@
 <NavDark />
 <MobileMenu />
 
-	<section>	<!-- bovenste gedeelde intro -->
+<section class="firstSection">
 	<div class="top_info">
 		<h1>Workshops</h1>
 
-		<div class="container_info">
-			<svg width="20" height="20" viewBox="0 0 23 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<path
-					d="M20.5 8.16988C23.8333 10.0944 23.8333 14.9056 20.5 16.8301L7.74999 24.1913C4.41666 26.1158 0.249999 23.7102 0.249999 19.8612L0.25 5.13877C0.25 1.28977 4.41667 -1.11584 7.75 0.808657L20.5 8.16988Z"
-					fill="#F26F21"
-				/>
-			</svg>
-			<p>
-				Natuurlijk! Workshops zijn fantastische leermogelijkheden waarbij deelnemers praktische
-				vaardigheden kunnen verwerven, nieuwe kennis kunnen opdoen en vaak ook nieuwe mensen kunnen
-				ontmoeten. Het idee achter jouw website om een overzicht te bieden van beschikbare workshops
-				is geweldig, omdat het mensen kan helpen om gemakkelijk toegang te krijgen tot deze
-				waardevolle leermogelijkheden. Ontdek en Leer met Onze Workshopgids Welkom bij Plantswap, dé
-				plek om workshops te ontdekken die jouw vaardigheden kunnen verbeteren, je passies kunnen
-				verdiepen en je horizon kunnen verbreden.
-			</p>
+		<div class="wrapper_info">
+			<div class="container_info">
+				<svg
+					width="20"
+					height="20"
+					viewBox="0 0 23 25"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M20.5 8.16988C23.8333 10.0944 23.8333 14.9056 20.5 16.8301L7.74999 24.1913C4.41666 26.1158 0.249999 23.7102 0.249999 19.8612L0.25 5.13877C0.25 1.28977 4.41667 -1.11584 7.75 0.808657L20.5 8.16988Z"
+						fill="#F26F21"
+					/>
+				</svg>
+				<p>
+					Natuurlijk! Workshops zijn fantastische leermogelijkheden waarbij deelnemers praktische
+					vaardigheden kunnen verwerven, nieuwe kennis kunnen opdoen en vaak ook nieuwe mensen
+					kunnen ontmoeten. Het idee achter jouw website om een overzicht te bieden van beschikbare
+					workshops is geweldig, omdat het mensen kan helpen om gemakkelijk toegang te krijgen tot
+					deze waardevolle leermogelijkheden. Ontdek en Leer met Onze Workshopgids Welkom bij
+					Plantswap, dé plek om workshops te ontdekken die jouw vaardigheden kunnen verbeteren, je
+					passies kunnen verdiepen en je horizon kunnen verbreden.
+				</p>
+			</div>
+
+			<div class="form">
+				<form on:submit|preventDefault={filterWorkshops}>
+					<label for="month">Selecteer maand:</label>
+					<select id="month" bind:value={selectedMonth} on:change={filterWorkshops}>
+						<option value="">alle</option>
+						{#each months as month}
+							<option value={month}>{month}</option>
+						{/each}
+					</select>
+				</form>
+			</div>
 		</div>
 	</div>
+</section>
 
-	<!-- de form waarmee je op maand kan selecteren -->
+<section>
 	<div class="wrapper">
-		<form on:submit|preventDefault={filterWorkshops}>
-			<label for="month">Selecteer maand:</label>
-			<select id="month" bind:value={selectedMonth} on:change={filterWorkshops}>
-				<option value="">alle</option>
-				{#each months as month}
-					<option value={month}>{month}</option>
-				{/each}
-			</select>
-		</form>
-
 		<div class="container_workshop_cards">
 			{#each filteredWorkshops as workshop}
 				<div class="card">
@@ -101,32 +112,37 @@
 </section>
 
 <style>
-	section {
-		padding-top: 6rem;
-	}
-
 	:root {
-		--margin: 2rem;
 		--padding: 0.5rem;
 		--color-text: #555555;
 		--borderr: 5px;
 	}
 
-	main {
-		width: 100%;
-		height: 100%;
-	}
-
-	h1 {
-		color: var(--color-primair);
-	}
-
-	.top_info {
+	.firstSection {
+		padding-top: 6rem;
 		margin: var(--margin);
-		& h1 {	
-			line-height: 1.7;
+
+		& h1 {
+			color: var(--color-primair);
+			font-size: var(--title-size);
+		}
+
+		& form {
+			margin-left: 0;
 		}
 	}
+
+	/* .wrapper_info {
+		display: flex;
+		justify-content: space-between;
+		align-items: end;
+	} */
+
+	/* .form {
+		display: flex;
+		flex-direction: column;
+		justify-content: end;
+	} */
 
 	.container_info {
 		display: flex;
@@ -135,6 +151,7 @@
 
 		& p {
 			width: 20rem;
+			color: var(--text-color);
 		}
 	}
 
@@ -143,7 +160,6 @@
 		flex-direction: column;
 		width: 10rem;
 		margin-top: 3rem;
-		margin: var(--margin);
 	}
 
 	select {
@@ -200,9 +216,11 @@
 	@media (min-width: 768px) and (max-width: 1023px) {
 		.wrapper {
 			display: flex;
+			flex-direction: row;
+			width: 100%;
 		}
 		.card {
-			width: 80%;
+			width: 40%;
 		}
 
 		.top_info p,
@@ -218,13 +236,15 @@
 			width: 40rem;
 		}
 
-		
-
 		form {
 			border-radius: var(--border-radius);
 			padding: 1rem;
 			width: 40%;
-			height: 40vh;
+		}
+
+		.container_workshop_cards {
+			display: flex;
+			flex-wrap: wrap;
 		}
 	}
 
@@ -238,7 +258,13 @@
 		.container_workshop_cards {
 			display: flex;
 			flex-wrap: wrap;
-			justify-content: center;
+			justify-content: space-between;
+		}
+
+		.wrapper_info {
+			display: flex;
+			justify-content: space-between;
+			align-items: end;
 		}
 
 		.top_info p,
@@ -250,25 +276,16 @@
 			width: 35rem;
 		}
 
-		
 		.card {
-			width: 30vw;
+			width: 25%;
 		}
 
 		.plant {
 			height: 350px;
 		}
 
-		.container_workshop_cards {
-			width: 100%;
-			margin: 0 auto;
-		}
-
 		form {
 			border-radius: var(--border-radius);
-			padding: 1rem;
-			width: 25%;
-			height: 40vh;
 		}
 	}
 </style>

@@ -1,5 +1,6 @@
 <script>
-	import Header from '$lib/components/HeaderDef.svelte';
+	import NavDark from '$lib/components/NavDark.svelte';
+	import MobileMenu from '../../lib/components/MobileMenu.svelte';
 	import Footer from '../../lib/components/footer.svelte';
 	export let data;
 	// console.log(data)
@@ -22,7 +23,8 @@
 
  </script>
 
-<Header />
+<NavDark />
+<MobileMenu />
 
 <h1>Alle stekjes</h1>
 
@@ -87,6 +89,7 @@
 		font-size: var(--title-size);
 		color: var(--title-color);
 		margin: 2rem;
+		margin-top: 8rem;
 		font-weight: bolder;
 	}
 

@@ -121,7 +121,7 @@
     </div>
 
     <div>
-        <a href="/stekje">
+        <a href="/all_stekjes">
             <button class="button-all-stekjes">
                 Bekijk alle stekjes!<svg class="svg-button"
                     width="22"
