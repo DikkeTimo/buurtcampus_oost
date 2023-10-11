@@ -25,10 +25,9 @@
 		if (selectedMonth) {
 			filteredWorkshops = data.workshops.filter((workshop) => {
 				return workshop.datum.toLowerCase().includes(selectedMonth.toLowerCase());
-				// Hier kijkt of een datum hetzelfde is als wat in de months staat zodat hij dit kan filteren
 			});
 		} else {
-			filteredWorkshops = data.workshops; // Reset to all workshops if no month selected
+			filteredWorkshops = data.workshops;
 		}
 	}
 </script>
@@ -51,8 +50,9 @@
 		</p>
 	</div>
 
+	<!-- de form waarmee je op maand kan selecteren -->
 	<div class="wrapper">
-		<!-- de form waarmee je op maand kan selecteren -->
+		
 		<form on:submit|preventDefault={filterWorkshops}>
 			<label for="month">Selecteer maand:</label>
 			<select id="month" bind:value={selectedMonth} on:change={filterWorkshops}>
