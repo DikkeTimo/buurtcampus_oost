@@ -5,6 +5,8 @@
     import Footer from '../lib/components/footer.svelte';
 	import MobileMenu from '../lib/components/MobileMenu.svelte';
 
+    import Netwerk from '$lib/assets/netwerk.png'
+
     export let data;
 
     let slidesContainer;
@@ -158,7 +160,7 @@
         planten.</p>
 
     <div class="image-about">
-        <img src="src/assets/netwerk.png">
+        <img src={Netwerk}>
     </div>
 </section>
 
