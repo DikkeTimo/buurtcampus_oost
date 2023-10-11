@@ -151,7 +151,6 @@
 	#month {
 		font-family: 'Mulish', sans-serif;
 		padding: var(--padding);
-		border: 1px grey solid;
 		border-radius: 5px;
 	}
 	/* ----- */
@@ -219,7 +218,6 @@
 		
 
 		form {
-			border: 2px solid var(--background-color);
 			border-radius: var(--border-radius);
 			padding: 1rem;
 			width: 40%;
@@ -264,7 +262,6 @@
 		}
 
 		form {
-			border: 2px solid var(--background-color);
 			border-radius: var(--border-radius);
 			padding: 1rem;
 			width: 25%;

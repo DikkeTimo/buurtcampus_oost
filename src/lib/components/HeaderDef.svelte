@@ -65,6 +65,7 @@
 		-moz-box-shadow: 0px 1px 5px 0px rgba(66, 68, 90, 1);
 		box-shadow: 0px 1px -1px 0px rgb(66, 68, 90);
 		font-size: 1em;
+		z-index: 3;
 	}
 
 	.logo {
