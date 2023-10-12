@@ -130,7 +130,7 @@
     <div>
         <a href="/all_stekjes">
             <button class="button-all-stekjes">
-                Bekijk alle stekjes!<svg class="svg-button"
+                Bekijk alle stekjes<svg class="svg-button"
                     width="22"
                     height="20"
                     viewBox="0 0 22 20"
@@ -147,26 +147,7 @@
         </a>
     </div>
 
-	<div>
-		<a href="/stekje">
-			<button class="button-all-stekjes">
-				Bekijk alle stekjes!<svg
-					class="svg-button"
-					width="22"
-					height="20"
-					viewBox="0 0 22 20"
-					fill=""
-					xmlns="http://www.w3.org/2000/svg"
-				>
-					<path
-						d="M0 10.2317H20M20 10.2317L11.3333 0.99997M20 10.2317L11.3333 19"
-						stroke=""
-						stroke-width="1.5"
-					/>
-				</svg>
-			</button>
-		</a>
-	</div>
+
 </section>
 
 <!-- ABOUT BUURTCAMPUS OOST -->
@@ -306,7 +287,6 @@
             height: 100vh;
 			width: 100%;
             margin-top: 10vh;
-
 		}
 
         .overlay {
@@ -345,6 +325,7 @@
             transform: translateX(-65%);
             background-color: var(--color-primair);
             padding: 2em;
+            border-radius: 1em;
         }
 
         .slides img {

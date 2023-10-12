@@ -195,6 +195,7 @@
 		background-color: var(--background-color);
 		max-width: 100%;
 		box-shadow: rgba(149, 157, 165, 0.1) 0px 8px 24px;
+		margin-bottom: 1em;
 	}
 
 	.plant {
@@ -208,7 +209,7 @@
 		object-fit: cover;
 		object-position: center;
 		width: 100%;
-		height: 100%;
+		height: 27vh;
 	}
 
 	.info_workshop {
