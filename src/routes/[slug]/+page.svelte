@@ -1,11 +1,14 @@
 <script>
-	import Header from '$lib/components/HeaderDef.svelte';
+	import NavDark from '$lib/components/NavDark.svelte';
+	import MobileMenu from '$lib/components/MobileMenu.svelte';
 	import Footer from '../../lib/components/footer.svelte';
 	export let data;
 	console.log(data);
 </script>
 
-<Header/>
+
+<NavDark />
+<MobileMenu />
 
 <section>
 	<div class="container">
@@ -356,6 +359,10 @@
 			display: grid;
 			grid-template-columns: repeat(4, 1fr); /* Eerste vier items in 4 kolommen */
 			grid-gap: 15px;
+		}
+
+		section {
+			padding-top: 10vh;
 		}
 	}
 </style>

@@ -30,7 +30,7 @@
 <style>
 	section {
         position: sticky;
-        top: 1em;
+        top: 0;
 		padding: 2em;
 		height: 90vh;
 		width: 100%;
@@ -75,5 +75,38 @@
 
 	p {
 		max-width: 75%;
+	}
+
+
+	@media screen and (max-width: 1122px) {
+
+	}
+
+	@media screen and (max-width: 700px) {
+
+	h3 {
+		font-size: 2.5em;
+	}
+
+	p {
+		max-width: 100%;
+		padding-bottom: 1em;
+	}
+
+	img {
+		height: 60%;
+		width: 100%;
+		object-fit: cover;
+		border-radius: 1em;
+	}
+
+
+	.wrapper-block {
+		flex-direction: column;
+		padding: 1em;
+		justify-content: space-between;
+		align-items: center;
+	}
+	
 	}
 </style>

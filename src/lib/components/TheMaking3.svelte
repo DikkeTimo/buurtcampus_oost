@@ -30,7 +30,7 @@
 <style>
 	section {
         position: sticky;
-        top: 5em;
+        top: 4em;
 		padding: 2em;
 		height: 90vh;
 		width: 100%;
@@ -75,4 +75,45 @@
 	p {
 		max-width: 75%;
 	}
+
+	@media screen and (max-width: 1122px) {
+
+}
+
+@media screen and (max-width: 700px) {
+
+h3 {
+	font-size: 2.5em;
+}
+
+p {
+	max-width: 100%;
+	padding-bottom: 1em;
+}
+
+img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	border-radius: 1em;
+}
+
+
+.wrapper-block {
+	flex-direction: column;
+	padding: 1em;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.left-content {
+	height: 35%;
+}
+
+.right-content {
+        padding-left: 0em;
+		padding-top: 1em;
+	}
+
+}
 </style>

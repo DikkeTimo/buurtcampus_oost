@@ -10,9 +10,7 @@
 				Het proces van het stekken van planten is een boeiende manier om nieuwe planten te laten
 				groeien uit delen van bestaande exemplaren. Het begint met het selecteren van gezonde
 				moederplanten. Knip een stukje van de plant, meestal een takje of een blad, met scherpe,
-				schone scharen of een mes. Zorg ervoor dat het stekje minstens één knooppunt (waar bladeren
-				groeien) heeft. Verwijder eventuele bladeren aan de onderkant van het stekje om wortelgroei
-				te bevorderen.
+				schone scharen of een mes. 
 			</p>
 		</div>
 		<div class="right-content">
@@ -27,7 +25,7 @@
 <style>
 	section {
         position: sticky;
-        top: 7em;
+        top: 6em;
 		padding: 2em;
 		height: 90vh;
 		width: 100%;
@@ -71,4 +69,36 @@
 	p {
 		max-width: 75%;
 	}
+
+	@media screen and (max-width: 1122px) {
+
+}
+
+@media screen and (max-width: 700px) {
+
+h3 {
+	font-size: 2.5em;
+}
+
+p {
+	max-width: 100%;
+	padding-bottom: 1em;
+}
+
+img {
+	height: 60%;
+	width: 100%;
+	object-fit: cover;
+	border-radius: 1em;
+}
+
+
+.wrapper-block {
+	flex-direction: column;
+	padding: 1em;
+	justify-content: space-between;
+	align-items: center;
+}
+
+}
 </style>
