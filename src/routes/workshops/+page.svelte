@@ -89,9 +89,14 @@
 		<div class="container_workshop_cards">
 			{#each filteredWorkshops as workshop}
 				<div class="card">
-					<div class="clippy">
-						<div class="plant">
-							<img class="image-clip" src={workshop.foto[0].url} alt="foto van een stekje" width="100" />
+					<div class="plant">
+						<div class="clippy">
+							<img
+								class="image-clip"
+								src={workshop.foto[0].url}
+								alt="foto van een stekje"
+								width="100"
+							/>
 						</div>
 					</div>
 					<div class="info_workshop">
@@ -291,15 +296,30 @@
 			cursor: pointer;
 		}
 
-		.card:hover .plant {
-			transform: scale(1.04);
+		.card:hover .image-clip {
+			transform: scale(1.1);
 		}
 
 		.plant {
 			height: 39vh;
-			transition: 0.3s;
 		}
 
+		.plant img {
+			border-radius: var(--border-radius);
+			object-fit: cover;
+			object-position: center;
+			width: 100%;
+			height: 39vh;
+		}
+
+		.image-clip {
+			max-height: 39vh;
+			transition: 0.5s;
+		}
+
+		.clippy {
+			clip-path: inset(3px 0 10px 0 round 1em);		
+		}
 
 		form {
 			border-radius: var(--border-radius);
