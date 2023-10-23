@@ -149,4 +149,38 @@
     .background:hover .right-svg {
         transform: translateY(-5%) translateX(20%) rotate(20deg);
     }
+	@media screen and (max-width: 700px) {
+		footer {
+			height: max-content;
+			padding: 4em 1em;
+		}
+
+
+		.information {
+			flex-direction: column;
+			gap: 1em;
+			width: 80%;
+			margin-left: 1em;
+		}
+		
+		svg {
+			/* display: none; */
+			z-index: 0;
+			opacity: .3;
+		}
+		
+		ul { 
+			width: 100%;
+			z-index: 2;
+
+		}
+		.title {
+		font-size: 2em;
+		margin-bottom: 0rem;
+		font-weight: 700;
+		/* color: var(--color-secundair); */
+	}
+    
+	}
+
 </style>

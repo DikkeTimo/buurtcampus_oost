@@ -2,7 +2,7 @@
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import { onMount } from 'svelte';
-	import Header from '$lib/components/HeaderDef.svelte';
+	import HeaderDef from './HeaderDef.svelte';
 
 	gsap.registerPlugin(ScrollTrigger);
 
@@ -79,10 +79,14 @@
 					<a class="menu-item" href="/"> Home </a>
 				</li>
 				<li>
-					<a class="menu-item" href="/stekjes"> Stekjes </a>
+					<a class="menu-item" href="/all_stekjes"> Stekjes </a>
 				</li>
 				<li>
 					<a class="menu-item" href="/workshops"> Workshops </a>
+				</li>
+
+				<li>
+					<a class="menu-item" href="/maken"> De Kast </a>
 				</li>
 				<li>
 					<a class="menu-item" href="/contact"> Contact </a>
@@ -92,21 +96,22 @@
 	</div>
 	<!-- <div class="line"></div> -->
 
-	<!-- <Header /> -->
+	<div class="mobile-none">
+	<!-- <HeaderDef /> -->
+</div>
 </header>
 
 <style>
 	.header-wrapper {
-		position: relative;
+		position: fixed;
 		top: 0;
 		left: 0;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
-		height: 6em;
 		width: 100%;
 		padding-right: 2em;
-		padding-left: 1em;
+		padding-left: 0em;
 		z-index: 500;
 	}
 
@@ -118,6 +123,8 @@
 		align-items: center;
 		width: 100%;
 		z-index: 500;
+		height: 10vh;
+		padding-left: 0;
 	}
 
 	.menu-item {
@@ -154,6 +161,11 @@
 	svg {
 		margin-top: 1em;
 		width: 20rem;
+		margin-left: 0em;
+	}
+
+	.mobile-none {
+		display: none;
 	}
 
 	@media screen and (max-width: 1122px) {
@@ -169,11 +181,11 @@
 			display: flex;
 			flex-direction: row;
 			justify-content: space-between;
-			height: 3em;
+			height: 10vh;
 			width: 100%;
 			padding-right: 2em;
 			padding-left: 1em;
-			padding-top: 1em;
+			padding-top: 0em;
 		}
 
 		nav {
@@ -182,11 +194,14 @@
 
 		svg {
 			margin-top: 0;
-			width: 10rem;
+			width: 9rem;
 		}
 
 		ul {
 			display: none;
 		}
+		.mobile-none {
+		display: block;
+	}
 	}
 </style>
